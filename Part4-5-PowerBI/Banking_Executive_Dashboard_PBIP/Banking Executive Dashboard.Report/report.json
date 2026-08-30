@@ -1,0 +1,658 @@
+{
+  "config": "{\"version\":\"5.66\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":{\"visual\":\"2.12.0\",\"report\":\"3.4.0\",\"page\":\"2.3.1\"}}},\"activeSectionIndex\":4,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useStylableVisualContainerHeader\":true,\"defaultFilterActionIsDataFilter\":true,\"useEnhancedTooltips\":false},\"objects\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "filters": "[]",
+  "layoutOptimization": 0,
+  "publicCustomVisuals": [],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "1 Executive Overview",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section0_437507b0",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1210cebfbb8d4e48a671485209dd5a9d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":852,\"y\":75,\"z\":5000,\"width\":200,\"height\":110,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"_Measures.Total Loans\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Loans'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 852.00,
+          "y": 75.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"17b077c48fa643fa97b2dc6606cb9a2d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":200,\"z\":7000,\"width\":620,\"height\":250,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loans.LoanType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Loan Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Loans\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"LoanType\"},\"Name\":\"Loans.LoanType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"},\"Name\":\"_Measures.Total Loan Amount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loan Portfolio by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 250.00,
+          "width": 620.00,
+          "x": 20.00,
+          "y": 200.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"3241757924ae4c71854e01392e086ae2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":228,\"y\":75,\"z\":2000,\"width\":200,\"height\":110,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Accounts\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Accounts\"},\"Name\":\"_Measures.Total Accounts\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Accounts'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 228.00,
+          "y": 75.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"3af3dfce1d2b42f68684113506d6cd62\",\"layouts\":[{\"id\":0,\"position\":{\"x\":660,\"y\":200,\"z\":8000,\"width\":600,\"height\":250,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Accounts.AccountType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Accounts\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Accounts\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"AccountType\"},\"Name\":\"Accounts.AccountType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Accounts\"},\"Name\":\"_Measures.Total Accounts\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Accounts by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 250.00,
+          "width": 600.00,
+          "x": 660.00,
+          "y": 200.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"54983128bd544a23a748527c729201b4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":465,\"z\":9000,\"width\":620,\"height\":235,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top Branches by Total Balance'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 235.00,
+          "width": 620.00,
+          "x": 20.00,
+          "y": 465.00,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"590078c1f06c44edaf29de3e737e1fd2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":644,\"y\":75,\"z\":4000,\"width\":200,\"height\":110,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Transactions\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Transactions\"},\"Name\":\"_Measures.Total Transactions\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Transactions'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 644.00,
+          "y": 75.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"5cdadf6c40d94df3a2f50c129ff66c6d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":436,\"y\":75,\"z\":3000,\"width\":200,\"height\":110,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Balance'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 436.00,
+          "y": 75.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"9c87f892779640bc8f8f101279465721\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":700,\"height\":45,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Executive Banking Dashboard  —  Overview\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 45.00,
+          "width": 700.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"c946072e745e4633806eba0711b396dc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":75,\"z\":1000,\"width\":200,\"height\":110,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Customers'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 20.00,
+          "y": 75.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e767a7ad7c2f46bc84b694a03e128269\",\"layouts\":[{\"id\":0,\"position\":{\"x\":660,\"y\":465,\"z\":10000,\"width\":600,\"height\":235,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Transactions.TransType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Transaction Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Transactions\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"TransType\"},\"Name\":\"Transactions.TransType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Transaction Amount\"},\"Name\":\"_Measures.Total Transaction Amount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Transaction Amount\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Transaction Value by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 235.00,
+          "width": 600.00,
+          "x": 660.00,
+          "y": 465.00,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"eb79485b013644da8315cd276906938c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1060,\"y\":75,\"z\":6000,\"width\":200,\"height\":110,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Branches\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Branches\"},\"Name\":\"_Measures.Total Branches\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Branches'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 110.00,
+          "width": 200.00,
+          "x": 1060.00,
+          "y": 75.00,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "2 Customer Insights",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section1_731ed6e4",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"19ec20a8c17448af956901e9f8dd2651\",\"layouts\":[{\"id\":0,\"position\":{\"x\":560,\"y\":175,\"z\":5000,\"width\":500,\"height\":285,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Customers.City\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Customers\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"City\"},\"Name\":\"Customers.City\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Customers by City'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 500.00,
+          "x": 560.00,
+          "y": 175.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"47215ac4614148a78e9ff33bd2ea5835\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":600,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Customer Insights\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 600.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"5e21cc7e06d949e8a1cbd1e8579e4765\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":475,\"z\":6000,\"width\":1040,\"height\":225,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.YearMonth\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.New Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Date.YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"New Customers\"},\"Name\":\"_Measures.New Customers\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Monthly New Customers'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 1040.00,
+          "x": 20.00,
+          "y": 475.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"70c95376762d421ea968f17d5d58b5ab\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":175,\"z\":4000,\"width\":520,\"height\":285,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Customers by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 520.00,
+          "x": 20.00,
+          "y": 175.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"7e7f71dff0fd4db2860d5c4bbb5faa79\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1080,\"y\":60,\"z\":3000,\"width\":180,\"height\":180,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Customers.City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Customers\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"City\"},\"Name\":\"Customers.City\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'City'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.00,
+          "width": 180.00,
+          "x": 1080.00,
+          "y": 60.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"a6cabccfd2e7407f9088ee8264863b94\",\"layouts\":[{\"id\":0,\"position\":{\"x\":230,\"y\":60,\"z\":2000,\"width\":200,\"height\":100,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.New Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"New Customers\"},\"Name\":\"_Measures.New Customers\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'New Customers (in range)'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 230.00,
+          "y": 60.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d7b2bd1c5d6f4cefaa42b6410096a98a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":60,\"z\":1000,\"width\":200,\"height\":100,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Customers'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 20.00,
+          "y": 60.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "3 Accounts",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section2_308644cf",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2e15d81dca2642bd8e9441922f3b0697\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":175,\"z\":5000,\"width\":320,\"height\":285,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Accounts.AccountType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Accounts\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Accounts\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"AccountType\"},\"Name\":\"Accounts.AccountType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Accounts\"},\"Name\":\"_Measures.Total Accounts\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Account Types'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 320.00,
+          "x": 20.00,
+          "y": 175.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"663e99f698dc4a3ba7e90a4ea798e243\",\"layouts\":[{\"id\":0,\"position\":{\"x\":230,\"y\":60,\"z\":2000,\"width\":200,\"height\":100,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Average Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Balance\"},\"Name\":\"_Measures.Average Balance\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Average Balance'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 230.00,
+          "y": 60.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6c531c067e1f4d01adf7b3fa5c34c59b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":355,\"y\":175,\"z\":6000,\"width\":320,\"height\":285,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Accounts.Status\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Accounts\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Accounts\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Status\"},\"Name\":\"Accounts.Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Accounts\"},\"Name\":\"_Measures.Total Accounts\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Active vs Closed'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 320.00,
+          "x": 355.00,
+          "y": 175.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"82820f15eaa14ed9bafd022ae693deec\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":60,\"z\":3000,\"width\":200,\"height\":100,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Active Accounts\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Active Accounts\"},\"Name\":\"_Measures.Active Accounts\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Active Accounts'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 440.00,
+          "y": 60.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"8fc54342099044cd91afb93726e204c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1080,\"y\":60,\"z\":4000,\"width\":180,\"height\":180,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Accounts.AccountType\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Accounts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"AccountType\"},\"Name\":\"Accounts.AccountType\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Account Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.00,
+          "width": 180.00,
+          "x": 1080.00,
+          "y": 60.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"9c789f3fb7d141ab82da2aad87ee6f94\",\"layouts\":[{\"id\":0,\"position\":{\"x\":690,\"y\":175,\"z\":7000,\"width\":570,\"height\":285,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Balance by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 570.00,
+          "x": 690.00,
+          "y": 175.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"d20aea4df5e94257b204096eada768d6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":475,\"z\":8000,\"width\":1040,\"height\":225,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Customers.CustomerName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Customers\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CustomerName\"},\"Name\":\"Customers.CustomerName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Top Customers by Balance'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 1040.00,
+          "x": 20.00,
+          "y": 475.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"e283a8b3e12644cea1a086ea856ad71c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":60,\"z\":1000,\"width\":200,\"height\":100,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Balance'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 20.00,
+          "y": 60.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e54ae4e51a5b4949b471a451c3b23e6d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":600,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Account Analysis\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 600.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "4 Transactions",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section3_5b8fbaeb",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"00dbbdd447594fdead86c338639eab95\",\"layouts\":[{\"id\":0,\"position\":{\"x\":605,\"y\":60,\"z\":4000,\"width\":190,\"height\":95,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Transaction Count\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Transaction Count\"},\"Name\":\"_Measures.Transaction Count\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Transaction Count'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 190.00,
+          "x": 605.00,
+          "y": 60.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"124f3ffcaccf4a03a7c2782930edcdc8\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1080,\"y\":60,\"z\":5000,\"width\":180,\"height\":180,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Transactions.TransType\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Transactions\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"TransType\"},\"Name\":\"Transactions.TransType\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Transaction Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.00,
+          "width": 180.00,
+          "x": 1080.00,
+          "y": 60.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"33afba90b3ed497b853579ab4173c169\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":60,\"z\":1000,\"width\":190,\"height\":95,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Deposit Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Deposit Amount\"},\"Name\":\"_Measures.Deposit Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Deposits'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 190.00,
+          "x": 20.00,
+          "y": 60.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"865ee8194c0e4f62b747f4ee3dfa82cd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":410,\"y\":60,\"z\":3000,\"width\":190,\"height\":95,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Average Transaction Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Transaction Amount\"},\"Name\":\"_Measures.Average Transaction Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Avg Transaction'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 190.00,
+          "x": 410.00,
+          "y": 60.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"91f3545c12774208967622b0214f6519\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":600,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Transaction Analysis\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 600.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"98db2e94b9ee4ab896ea8e9b0b2c3fd1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":215,\"y\":60,\"z\":2000,\"width\":190,\"height\":95,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Withdrawal Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Withdrawal Amount\"},\"Name\":\"_Measures.Withdrawal Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Withdrawals'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 190.00,
+          "x": 215.00,
+          "y": 60.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"f7377dd7c60143b7b25c4e62ce695d82\",\"layouts\":[{\"id\":0,\"position\":{\"x\":420,\"y\":170,\"z\":7000,\"width\":640,\"height\":290,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date.YearMonth\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Transaction Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"YearMonth\"},\"Name\":\"Date.YearMonth\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Transaction Amount\"},\"Name\":\"_Measures.Total Transaction Amount\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Monthly Transaction Trend'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.00,
+          "width": 640.00,
+          "x": 420.00,
+          "y": 170.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"f81dd9d9b6044e3ea4d51ea5a8907186\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":475,\"z\":8000,\"width\":1040,\"height\":225,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Transactions.TransactionID\"},{\"queryRef\":\"Transactions.TransType\"},{\"queryRef\":\"Transactions.Amount\"},{\"queryRef\":\"Transactions.Description\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Transactions\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"TransactionID\"},\"Name\":\"Transactions.TransactionID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"TransType\"},\"Name\":\"Transactions.TransType\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Amount\"},\"Name\":\"Transactions.Amount\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Description\"},\"Name\":\"Transactions.Description\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Largest Transactions'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 1040.00,
+          "x": 20.00,
+          "y": 475.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"fda573c49aaf43b2bd6b325c222a04bb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":170,\"z\":6000,\"width\":380,\"height\":290,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Transactions.TransType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Transaction Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Transactions\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"TransType\"},\"Name\":\"Transactions.TransType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Transaction Amount\"},\"Name\":\"_Measures.Total Transaction Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Deposits vs Withdrawals'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 290.00,
+          "width": 380.00,
+          "x": 20.00,
+          "y": 170.00,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "5 Loans",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section4_e7827d26",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"289a447f2e834a26a7dcc2e12e0cb301\",\"layouts\":[{\"id\":0,\"position\":{\"x\":690,\"y\":175,\"z\":7000,\"width\":370,\"height\":285,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loans.LoanType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Loan Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Loans\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"LoanType\"},\"Name\":\"Loans.LoanType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"},\"Name\":\"_Measures.Total Loan Amount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loan Amount by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 370.00,
+          "x": 690.00,
+          "y": 175.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"3d29095e0bd84cf183484dab70e99271\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":600,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Loan Portfolio\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 600.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"59eecf86bdad423f957c07765f3fd304\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":175,\"z\":5000,\"width\":320,\"height\":285,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loans.LoanType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Loans\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"LoanType\"},\"Name\":\"Loans.LoanType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"_Measures.Total Loans\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loans by Type (count)'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 320.00,
+          "x": 20.00,
+          "y": 175.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"be2b94fa0511427ba6f9f924232f240d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":475,\"z\":8000,\"width\":520,\"height\":225,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Loan Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"},\"Name\":\"_Measures.Total Loan Amount\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loan Amount by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 520.00,
+          "x": 20.00,
+          "y": 475.00,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"c4cee1a4dfa2417185232c876afd4157\",\"layouts\":[{\"id\":0,\"position\":{\"x\":560,\"y\":475,\"z\":9000,\"width\":500,\"height\":225,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loans.LoanType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Average Interest Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Loans\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"LoanType\"},\"Name\":\"Loans.LoanType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Interest Rate\"},\"Name\":\"_Measures.Average Interest Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Interest Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Avg Interest Rate by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 500.00,
+          "x": 560.00,
+          "y": 475.00,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"cf653292dcc54e929385a9325c8cc1ec\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":60,\"z\":3000,\"width\":200,\"height\":100,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Average Interest Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Average Interest Rate\"},\"Name\":\"_Measures.Average Interest Rate\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Avg Interest Rate'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 440.00,
+          "y": 60.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"d41a6fc8b861416390d609081594d7ee\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1080,\"y\":60,\"z\":4000,\"width\":180,\"height\":200,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Loans.LoanType\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Loans\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"LoanType\"},\"Name\":\"Loans.LoanType\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loan Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 200.00,
+          "width": 180.00,
+          "x": 1080.00,
+          "y": 60.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"e2a0815586fd401aaa7f045043f5d074\",\"layouts\":[{\"id\":0,\"position\":{\"x\":355,\"y\":175,\"z\":6000,\"width\":320,\"height\":285,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loans.Status\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Loans\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Status\"},\"Name\":\"Loans.Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"_Measures.Total Loans\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Loan Status'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 285.00,
+          "width": 320.00,
+          "x": 355.00,
+          "y": 175.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"fc399d8e84cd4d968e235017d39d3932\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":60,\"z\":1000,\"width\":200,\"height\":100,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Loan Amount\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Amount\"},\"Name\":\"_Measures.Total Loan Amount\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Loan Amount'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 20.00,
+          "y": 60.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"fda041af86d141da84559fcf9a67c72f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":230,\"y\":60,\"z\":2000,\"width\":200,\"height\":100,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Active Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Active Loans\"},\"Name\":\"_Measures.Active Loans\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Active Loans'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 100.00,
+          "width": 200.00,
+          "x": 230.00,
+          "y": 60.00,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "6 Branch Performance",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section5_de50b62a",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"06644dfcd57340fda4c71e673506d043\",\"layouts\":[{\"id\":0,\"position\":{\"x\":680,\"y\":335,\"z\":5000,\"width\":580,\"height\":180,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Customers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Customers\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Customers by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.00,
+          "width": 580.00,
+          "x": 680.00,
+          "y": 335.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"256a4fe79b3642ee8bcd40a2c30cdec5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":680,\"y\":525,\"z\":6000,\"width\":580,\"height\":175,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Employees\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Employees\"},\"Name\":\"_Measures.Total Employees\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Employees\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Employees by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 175.00,
+          "width": 580.00,
+          "x": 680.00,
+          "y": 525.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"43c01819ed1d432d85db384e4fd68bfb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":600,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Branch Performance\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 600.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"67703d479b9c4f18abbcdf30e5961933\",\"layouts\":[{\"id\":0,\"position\":{\"x\":680,\"y\":145,\"z\":4000,\"width\":580,\"height\":180,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Balance\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Balance\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Balance by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 180.00,
+          "width": 580.00,
+          "x": 680.00,
+          "y": 145.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"801e7417e5a74b648fbf667dee6d5ce3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":340,\"y\":60,\"z\":2000,\"width\":300,\"height\":70,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Branches.City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Branches\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"City\"},\"Name\":\"Branches.City\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'City'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 300.00,
+          "x": 340.00,
+          "y": 60.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"d2c0358c5c504cd1a9452e6e4d37c51c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":60,\"z\":1000,\"width\":300,\"height\":70,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Branches\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 70.00,
+          "width": 300.00,
+          "x": 20.00,
+          "y": 60.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"f09d5081c5ec41aeb260ab8c768e2b2c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":145,\"z\":3000,\"width\":640,\"height\":555,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Branches.BranchName\"},{\"queryRef\":\"_Measures.Total Customers\"},{\"queryRef\":\"_Measures.Total Employees\"},{\"queryRef\":\"_Measures.Total Accounts\"},{\"queryRef\":\"_Measures.Total Balance\"},{\"queryRef\":\"_Measures.Total Deposits\"},{\"queryRef\":\"_Measures.Rank Branch\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Total Customers\"},\"Name\":\"_Measures.Total Customers\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Total Employees\"},\"Name\":\"_Measures.Total Employees\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Total Accounts\"},\"Name\":\"_Measures.Total Accounts\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Total Balance\"},\"Name\":\"_Measures.Total Balance\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Total Deposits\"},\"Name\":\"_Measures.Total Deposits\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Rank Branch\"},\"Name\":\"_Measures.Rank Branch\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Branch Ranking (by Balance)'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 555.00,
+          "width": 640.00,
+          "x": 20.00,
+          "y": 145.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "7 Bonus - Cards & Fees",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "Section6_9c67228a",
+      "ordinal": 6,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"031b90765d144d658971210a8e7ac6bd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":470,\"z\":9000,\"width\":1040,\"height\":230,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Branches.BranchName\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Credit Limit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Branches\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"BranchName\"},\"Name\":\"Branches.BranchName\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Credit Limit\"},\"Name\":\"_Measures.Total Credit Limit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Credit Limit\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2CA6A4'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Credit Limit Exposure by Branch'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 230.00,
+          "width": 1040.00,
+          "x": 20.00,
+          "y": 470.00,
+          "z": 9000.00
+        },
+        {
+          "config": "{\"name\":\"0aa0d293a8474c17826eb833316ce0f3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1080,\"y\":105,\"z\":5000,\"width\":180,\"height\":150,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Cards.CardType\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"Cards\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"CardType\"},\"Name\":\"Cards.CardType\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Card Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 150.00,
+          "width": 180.00,
+          "x": 1080.00,
+          "y": 105.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"29e01b1a1aba41d5a74a5e9ee3cc774f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":215,\"z\":6000,\"width\":320,\"height\":240,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Cards.CardType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Cards\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"CardType\"},\"Name\":\"Cards.CardType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Cards\"},\"Name\":\"_Measures.Total Cards\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cards by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.00,
+          "width": 320.00,
+          "x": 20.00,
+          "y": 215.00,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"339d6dc51def480ea6daa3bc8629e059\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":58,\"z\":1000,\"width\":1240,\"height\":40,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Chosen because cards and fees drive fee income and customer engagement — supporting decisions on card renewals, fee waivers and revenue leakage.\",\"textStyle\":{\"fontSize\":\"11pt\",\"color\":\"#4D4D4D\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 1240.00,
+          "x": 20.00,
+          "y": 58.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"38aad7e0d88d47d3bed26a7a2fc328fc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":105,\"z\":2000,\"width\":200,\"height\":95,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Active Cards\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Active Cards\"},\"Name\":\"_Measures.Active Cards\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Active Cards'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 200.00,
+          "x": 20.00,
+          "y": 105.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"3c85f04fe8354c0ba71fa9975ca85429\",\"layouts\":[{\"id\":0,\"position\":{\"x\":440,\"y\":105,\"z\":4000,\"width\":200,\"height\":95,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Fees Collected\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Fees Collected\"},\"Name\":\"_Measures.Total Fees Collected\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Fees Collected'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 200.00,
+          "x": 440.00,
+          "y": 105.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"7318928e3e784020950bb7bc4a01a73c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":355,\"y\":215,\"z\":7000,\"width\":320,\"height\":240,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Cards.Status\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Cards\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cards\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Status\"},\"Name\":\"Cards.Status\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Cards\"},\"Name\":\"_Measures.Total Cards\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Cards by Status'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.00,
+          "width": 320.00,
+          "x": 355.00,
+          "y": 215.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"7ede7ed295bf4f4ca3ee6cac3bdfdf54\",\"layouts\":[{\"id\":0,\"position\":{\"x\":230,\"y\":105,\"z\":3000,\"width\":200,\"height\":95,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"_Measures.Total Credit Limit\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Credit Limit\"},\"Name\":\"_Measures.Total Credit Limit\"}]},\"drillFilterOtherVisuals\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Credit Limit'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 95.00,
+          "width": 200.00,
+          "x": 230.00,
+          "y": 105.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"ceee93c2cca1457f88f50e9b2a95d377\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":15,\"z\":0,\"width\":900,\"height\":40,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Bonus  —  Cards & Fee Revenue\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#1F3864\",\"fontWeight\":\"bold\"}}],\"horizontalTextAlignment\":\"left\"}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 900.00,
+          "x": 20.00,
+          "y": 15.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"cf26e6ce67804df1a63a8cbb04c0d16d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":690,\"y\":215,\"z\":8000,\"width\":570,\"height\":240,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Fees.FeeType\",\"active\":true}],\"Y\":[{\"queryRef\":\"_Measures.Total Fees\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Fees\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"_Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"FeeType\"},\"Name\":\"Fees.FeeType\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Fees\"},\"Name\":\"_Measures.Total Fees\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Fees\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#2E75B6'\"}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Fee Revenue by Type'\"}}},\"fontColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#1F3864'\"}}}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 240.00,
+          "width": 570.00,
+          "x": 690.00,
+          "y": 215.00,
+          "z": 8000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

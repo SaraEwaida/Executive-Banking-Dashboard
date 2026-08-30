@@ -1,0 +1,61 @@
+CustomerID,FirstName,LastName,CustomerName,Email,Phone,City,JoinDate,BranchID,BranchName
+1,Alice,Johnson,Alice Johnson,alice@email.com,555-1001,New York,2020-01-15,1,Main Branch
+2,Bob,Smith,Bob Smith,bob@email.com,555-1002,New York,2019-03-22,2,Downtown Branch
+3,Carol,Davis,Carol Davis,carol@email.com,555-1003,Los Angeles,2021-07-10,3,West Branch
+4,David,Wilson,David Wilson,david@email.com,555-1004,Chicago,2018-11-05,4,North Branch
+5,Emma,Brown,Emma Brown,emma@email.com,555-1005,Houston,2022-02-28,5,East Branch
+6,Frank,Taylor,Frank Taylor,frank@email.com,555-1006,New York,2020-06-14,1,Main Branch
+7,Grace,Anderson,Grace Anderson,grace@email.com,555-1007,Los Angeles,2021-09-30,3,West Branch
+8,Henry,Martinez,Henry Martinez,henry@email.com,555-1008,Chicago,2019-12-01,4,North Branch
+9,Irene,Garcia,Irene Garcia,irene@email.com,555-1009,Houston,2023-01-20,5,East Branch
+10,James,Lee,James Lee,james@email.com,555-1010,New York,2017-08-18,2,Downtown Branch
+11,Liam,Thompson,Liam Thompson,liam@email.com,555-2001,Miami,2021-03-15,6,South Branch
+12,Sophia,Walker,Sophia Walker,sophia@email.com,555-2002,Miami,2020-08-20,6,South Branch
+13,Noah,Harris,Noah Harris,noah@email.com,555-2003,Dallas,2019-11-10,7,Central Branch
+14,Olivia,Clark,Olivia Clark,olivia@email.com,555-2004,Dallas,2022-01-05,7,Central Branch
+15,William,Lewis,William Lewis,william@email.com,555-2005,Seattle,2018-06-25,8,NorthWest Branch
+16,Emma,Robinson,Emma Robinson,emma2@email.com,555-2006,Seattle,2021-12-30,8,NorthWest Branch
+17,James,Young,James Young,jyoung@email.com,555-2007,Boston,2020-04-18,9,Harbor Branch
+18,Ava,Allen,Ava Allen,ava@email.com,555-2008,Boston,2019-07-22,9,Harbor Branch
+19,Benjamin,King,Benjamin King,ben@email.com,555-2009,Denver,2022-09-14,10,Lakeside Branch
+20,Mia,Wright,Mia Wright,mia@email.com,555-2010,Denver,2021-05-03,10,Lakeside Branch
+21,Lucas,Scott,Lucas Scott,lucas@email.com,555-2011,San Francisco,2018-03-28,11,Bay Branch
+22,Charlotte,Green,Charlotte Green,charlotte@email.com,555-2012,San Francisco,2020-10-15,11,Bay Branch
+23,Mason,Baker,Mason Baker,mason@email.com,555-2013,Phoenix,2019-02-11,12,Riverside Branch
+24,Amelia,Adams,Amelia Adams,amelia@email.com,555-2014,Phoenix,2021-08-07,12,Riverside Branch
+25,Ethan,Nelson,Ethan Nelson,ethan@email.com,555-2015,Philadelphia,2020-06-19,13,Metro Branch
+26,Harper,Carter,Harper Carter,harper@email.com,555-2016,Philadelphia,2022-03-25,13,Metro Branch
+27,Alexander,Mitchell,Alexander Mitchell,alex@email.com,555-2017,Atlanta,2019-09-08,14,Midtown Branch
+28,Evelyn,Perez,Evelyn Perez,evelyn@email.com,555-2018,Atlanta,2021-01-14,14,Midtown Branch
+29,Daniel,Roberts,Daniel Roberts,daniel@email.com,555-2019,Portland,2020-07-30,15,Garden Branch
+30,Abigail,Turner,Abigail Turner,abigail@email.com,555-2020,Portland,2022-11-20,15,Garden Branch
+31,Michael,Phillips,Michael Phillips,michael@email.com,555-2021,Miami,2018-12-05,6,South Branch
+32,Emily,Campbell,Emily Campbell,emily@email.com,555-2022,Dallas,2020-03-17,7,Central Branch
+33,Matthew,Parker,Matthew Parker,matthew@email.com,555-2023,Seattle,2021-06-22,8,NorthWest Branch
+34,Elizabeth,Evans,Elizabeth Evans,elizabeth@email.com,555-2024,Boston,2019-10-09,9,Harbor Branch
+35,Joseph,Edwards,Joseph Edwards,joseph@email.com,555-2025,Denver,2022-04-13,10,Lakeside Branch
+36,Sofia,Collins,Sofia Collins,sofia@email.com,555-2026,San Francisco,2020-09-27,11,Bay Branch
+37,David,Stewart,David Stewart,dstewart@email.com,555-2027,Phoenix,2018-08-16,12,Riverside Branch
+38,Victoria,Sanchez,Victoria Sanchez,victoria@email.com,555-2028,Philadelphia,2021-02-08,13,Metro Branch
+39,Andrew,Morris,Andrew Morris,andrew@email.com,555-2029,Atlanta,2020-05-21,14,Midtown Branch
+40,Grace,Rogers,Grace Rogers,grogers@email.com,555-2030,Portland,2022-08-04,15,Garden Branch
+41,Joshua,Reed,Joshua Reed,joshua@email.com,555-2031,New York,2019-01-30,1,Main Branch
+42,Scarlett,Cook,Scarlett Cook,scarlett@email.com,555-2032,New York,2021-07-16,2,Downtown Branch
+43,Ryan,Morgan,Ryan Morgan,ryan@email.com,555-2033,Los Angeles,2020-11-03,3,West Branch
+44,Aria,Bell,Aria Bell,aria@email.com,555-2034,Chicago,2018-05-27,4,North Branch
+45,Nathan,Murphy,Nathan Murphy,nathan@email.com,555-2035,Houston,2022-06-10,5,East Branch
+46,Penelope,Bailey,Penelope Bailey,penelope@email.com,555-2036,Miami,2019-04-14,6,South Branch
+47,Aaron,Rivera,Aaron Rivera,aaron@email.com,555-2037,Dallas,2021-10-28,7,Central Branch
+48,Layla,Cooper,Layla Cooper,layla@email.com,555-2038,Seattle,2020-02-09,8,NorthWest Branch
+49,Dylan,Richardson,Dylan Richardson,dylan@email.com,555-2039,Boston,2022-07-19,9,Harbor Branch
+50,Zoe,Cox,Zoe Cox,zoe@email.com,555-2040,Denver,2021-03-06,10,Lakeside Branch
+51,Tyler,Bennett,Tyler Bennett,tyler@email.com,555-3001,Las Vegas,2021-05-15,30,Strip Branch
+52,Madison,Flores,Madison Flores,madison@email.com,555-3002,Nashville,2020-09-12,31,Broadway Branch
+53,Caleb,Washington,Caleb Washington,caleb@email.com,555-3003,Austin,2019-04-08,32,Sixth Street Branch
+54,Natalie,Butler,Natalie Butler,natalie@email.com,555-3004,San Diego,2022-02-14,33,Gaslamp Branch
+55,Logan,Simmons,Logan Simmons,logan@email.com,555-3005,Detroit,2021-08-20,34,Midtown Branch
+56,Chloe,Foster,Chloe Foster,chloe@email.com,555-3006,Minneapolis,2020-11-30,35,Uptown Branch
+57,Hunter,Gonzalez,Hunter Gonzalez,hunter@email.com,555-3007,St. Louis,2018-07-25,36,Gateway Branch
+58,Stella,Bryant,Stella Bryant,stella@email.com,555-3008,Baltimore,2022-04-05,37,Inner Harbor Branch
+59,Connor,Alexander,Connor Alexander,connor@email.com,555-3009,Raleigh,2019-10-18,38,Research Branch
+60,Nora,Russell,Nora Russell,nora@email.com,555-3010,Charlotte,2021-12-08,39,Uptown Branch

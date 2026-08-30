@@ -1,0 +1,61 @@
+EmployeeID,FirstName,LastName,EmployeeName,JobTitle,Salary,BranchID,BranchName,HireDate,ManagerID
+301,Sarah,Connor,Sarah Connor,Branch Manager,85000,1,Main Branch,2015-03-10,
+302,Tom,Harris,Tom Harris,Branch Manager,80000,2,Downtown Branch,2016-07-01,
+303,Linda,White,Linda White,Branch Manager,78000,3,West Branch,2017-01-15,
+304,Mark,Evans,Mark Evans,Branch Manager,82000,4,North Branch,2014-09-20,
+305,Nancy,Clark,Nancy Clark,Branch Manager,79000,5,East Branch,2016-11-05,
+306,Paul,Walker,Paul Walker,Loan Officer,55000,1,Main Branch,2018-02-28,301
+307,Quinn,Adams,Quinn Adams,Teller,38000,1,Main Branch,2020-06-10,301
+308,Rachel,Brown,Rachel Brown,Teller,37000,2,Downtown Branch,2021-03-15,302
+309,Steve,Young,Steve Young,Loan Officer,54000,3,West Branch,2019-08-22,303
+310,Tina,Scott,Tina Scott,Teller,36000,4,North Branch,2022-01-10,304
+311,Uma,James,Uma James,Branch Manager,83000,6,South Branch,2015-06-01,
+312,Victor,Hughes,Victor Hughes,Branch Manager,81000,7,Central Branch,2016-03-15,
+313,Wendy,Foster,Wendy Foster,Branch Manager,79000,8,NorthWest Branch,2017-09-01,
+314,Xavier,Price,Xavier Price,Branch Manager,84000,9,Harbor Branch,2014-11-20,
+315,Yvonne,Diaz,Yvonne Diaz,Branch Manager,80000,10,Lakeside Branch,2016-07-10,
+316,Zach,Russell,Zach Russell,Branch Manager,86000,11,Bay Branch,2015-01-05,
+317,Amy,Griffin,Amy Griffin,Branch Manager,78000,12,Riverside Branch,2017-04-20,
+318,Brian,Hayes,Brian Hayes,Branch Manager,82000,13,Metro Branch,2014-08-15,
+319,Cathy,Myers,Cathy Myers,Branch Manager,77000,14,Midtown Branch,2018-02-01,
+320,Derek,Ford,Derek Ford,Branch Manager,80000,15,Garden Branch,2016-10-10,
+321,Ellen,Hamilton,Ellen Hamilton,Loan Officer,56000,2,Downtown Branch,2018-05-15,302
+322,Fred,Graham,Fred Graham,Teller,37500,3,West Branch,2021-01-20,303
+323,Gina,Sullivan,Gina Sullivan,Loan Officer,55000,4,North Branch,2019-06-10,304
+324,Harry,Wallace,Harry Wallace,Teller,36500,5,East Branch,2022-03-05,305
+325,Iris,Woods,Iris Woods,Loan Officer,54500,6,South Branch,2020-09-01,311
+326,Kevin,Brooks,Kevin Brooks,Branch Manager,81000,16,East Side Branch,2015-08-01,
+327,Laura,Jenkins,Laura Jenkins,Branch Manager,79000,17,Sunset Branch,2016-04-15,
+328,Marcus,Perry,Marcus Perry,Branch Manager,83000,18,Midway Branch,2017-07-01,
+329,Nina,Cooper,Nina Cooper,Branch Manager,80000,19,River Oaks Branch,2014-12-10,
+330,Oscar,Reed,Oscar Reed,Branch Manager,82000,20,Coconut Grove Branch,2016-09-20,
+331,Patricia,Bell,Patricia Bell,Branch Manager,84000,21,Uptown Branch,2015-03-01,
+332,Quincy,Cox,Quincy Cox,Branch Manager,78000,22,Capitol Hill Branch,2017-11-15,
+333,Rebecca,Ward,Rebecca Ward,Branch Manager,85000,23,Back Bay Branch,2014-06-25,
+334,Samuel,Torres,Samuel Torres,Branch Manager,79000,24,Cherry Creek Branch,2016-02-10,
+335,Teresa,Nguyen,Teresa Nguyen,Branch Manager,83000,25,Financial District,2015-10-05,
+336,Ulrich,Ross,Ulrich Ross,Loan Officer,55500,7,Central Branch,2019-03-10,312
+337,Vera,Morales,Vera Morales,Teller,37000,8,NorthWest Branch,2020-11-05,313
+338,Walter,Kim,Walter Kim,Loan Officer,54000,9,Harbor Branch,2018-08-20,314
+339,Xena,Chavez,Xena Chavez,Teller,36500,10,Lakeside Branch,2021-04-15,315
+340,Yale,Murphy,Yale Murphy,Loan Officer,56000,11,Bay Branch,2019-01-25,316
+341,Zara,Price,Zara Price,Teller,37500,12,Riverside Branch,2022-02-28,317
+342,Adam,Sanchez,Adam Sanchez,Loan Officer,55000,13,Metro Branch,2020-07-10,318
+343,Bella,Reyes,Bella Reyes,Teller,36000,14,Midtown Branch,2021-09-01,319
+344,Carlos,Gray,Carlos Gray,Loan Officer,54500,15,Garden Branch,2019-05-20,320
+345,Diana,James,Diana James,Teller,37000,16,East Side Branch,2022-01-15,326
+346,Evan,Watson,Evan Watson,Loan Officer,55500,17,Sunset Branch,2018-10-30,327
+347,Fiona,Brooks,Fiona Brooks,Teller,36500,18,Midway Branch,2021-06-20,328
+348,George,Kelly,George Kelly,Loan Officer,54000,19,River Oaks Branch,2019-09-05,329
+349,Helen,Sanders,Helen Sanders,Teller,37000,20,Coconut Grove Branch,2020-03-15,330
+350,Ivan,Price,Ivan Price,Loan Officer,55000,21,Uptown Branch,2018-12-01,331
+351,Julia,Bennett,Julia Bennett,Teller,37500,22,Capitol Hill Branch,2022-05-10,332
+352,Karl,Wood,Karl Wood,Loan Officer,54500,23,Back Bay Branch,2019-07-25,333
+353,Lisa,Barnes,Lisa Barnes,Teller,36000,24,Cherry Creek Branch,2021-01-20,334
+354,Mike,Ross,Mike Ross,Loan Officer,55000,25,Financial District,2020-04-10,335
+355,Nicole,Turner,Nicole Turner,Teller,37000,1,Main Branch,2022-07-15,301
+356,Oliver,Fisher,Oliver Fisher,Loan Officer,54500,2,Downtown Branch,2019-11-20,302
+357,Paula,Stone,Paula Stone,Teller,36500,3,West Branch,2021-08-05,303
+358,Quentin,Holt,Quentin Holt,Loan Officer,55500,4,North Branch,2018-06-15,304
+359,Rosa,Burke,Rosa Burke,Teller,37000,5,East Branch,2022-03-20,305
+360,Simon,Cook,Simon Cook,Loan Officer,54000,6,South Branch,2020-08-10,311

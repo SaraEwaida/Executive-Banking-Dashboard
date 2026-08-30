@@ -1,0 +1,142 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 700,
+        "y": 1110.4000244140625
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1235.4589266757862,
+            "y": 645.932159739508
+          },
+          "nodeIndex": "_Measures",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 620.532290834246,
+            "y": 896.163556733671
+          },
+          "nodeIndex": "Accounts",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 818.00465547226725,
+            "y": 300.6224663975745
+          },
+          "nodeIndex": "Branches",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 907.54519525336946,
+            "y": 1203.5975183103856
+          },
+          "nodeIndex": "Cards",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 652.61729029174353,
+            "y": 542.7685438468834
+          },
+          "nodeIndex": "Customers",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 336.15487856491632,
+            "y": 804.56956702455523
+          },
+          "nodeIndex": "Date",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1001.4589266757864,
+            "y": -50
+          },
+          "nodeIndex": "Employees",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 479.72111903226585,
+            "y": 1245.8643194790163
+          },
+          "nodeIndex": "Fees",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 938.56525760455133,
+            "y": 529.8701961463471
+          },
+          "nodeIndex": "Loans",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 800.85719392598548
+          },
+          "nodeIndex": "Transactions",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,61 @@
+FeeID,AccountID,FeeType,Amount,FeeDate,Description,Status,BranchID,BranchName
+1,106,MAINTENANCE,12,2024-01-31,Monthly maintenance fee,PAID,5,East Branch
+2,110,MAINTENANCE,12,2024-01-31,Monthly maintenance fee,PAID,5,East Branch
+3,113,MAINTENANCE,12,2024-01-31,Monthly maintenance fee,WAIVED,2,Downtown Branch
+4,106,OVERDRAFT,35,2024-01-25,Overdraft fee,PAID,5,East Branch
+5,110,ATM,3,2024-02-12,Out-of-network ATM fee,PAID,5,East Branch
+6,101,TRANSFER,5,2024-01-08,Wire transfer fee,PAID,1,Main Branch
+7,111,MAINTENANCE,0,2024-02-29,Monthly fee - waived,WAIVED,2,Downtown Branch
+8,104,MAINTENANCE,12,2024-02-29,Monthly maintenance fee,PAID,3,West Branch
+9,137,OVERDRAFT,35,2024-04-30,Overdraft fee,PAID,13,Metro Branch
+10,126,ATM,3,2024-04-08,Out-of-network ATM fee,PAID,10,Lakeside Branch
+11,119,MAINTENANCE,12,2024-03-31,Monthly maintenance fee,PAID,7,Central Branch
+12,106,MAINTENANCE,12,2024-02-29,Monthly maintenance fee,PAID,5,East Branch
+13,161,MAINTENANCE,12,2024-06-30,Monthly maintenance fee,PENDING,5,East Branch
+14,110,MAINTENANCE,12,2024-02-29,Monthly maintenance fee,PAID,5,East Branch
+15,103,TRANSFER,5,2024-02-25,Wire transfer fee,PAID,2,Downtown Branch
+16,149,OVERDRAFT,35,2024-06-12,Overdraft fee,PAID,10,Lakeside Branch
+17,165,OVERDRAFT,35,2024-07-03,Overdraft fee,PENDING,9,Harbor Branch
+18,106,MAINTENANCE,12,2024-03-31,Monthly maintenance fee,PAID,5,East Branch
+19,137,MAINTENANCE,12,2024-05-31,Monthly maintenance fee,PAID,13,Metro Branch
+20,110,LATE_PAYMENT,25,2024-03-15,Late loan payment fee,PAID,5,East Branch
+21,111,MAINTENANCE,0,2024-03-31,Monthly fee - waived (premium),WAIVED,2,Downtown Branch
+22,129,MAINTENANCE,0,2024-01-31,Monthly fee - waived (premium),WAIVED,11,Bay Branch
+23,106,MAINTENANCE,12,2024-04-30,Monthly maintenance fee,PAID,5,East Branch
+24,110,MAINTENANCE,12,2024-03-31,Monthly maintenance fee,PAID,5,East Branch
+25,119,OVERDRAFT,35,2024-03-18,Overdraft fee,PAID,7,Central Branch
+26,126,MAINTENANCE,12,2024-05-31,Monthly maintenance fee,PAID,10,Lakeside Branch
+27,137,ATM,3,2024-05-08,Out-of-network ATM fee,PAID,13,Metro Branch
+28,143,MAINTENANCE,12,2024-05-31,Monthly maintenance fee,PAID,15,Garden Branch
+29,149,MAINTENANCE,12,2024-05-31,Monthly maintenance fee,PAID,10,Lakeside Branch
+30,157,MAINTENANCE,12,2024-07-31,Monthly maintenance fee,PENDING,2,Downtown Branch
+31,161,OVERDRAFT,35,2024-06-10,Overdraft fee,PAID,5,East Branch
+32,165,MAINTENANCE,12,2024-07-31,Monthly maintenance fee,PENDING,9,Harbor Branch
+33,169,TRANSFER,5,2024-07-10,Wire transfer fee,PAID,30,Strip Branch
+34,170,ATM,3,2024-07-15,Out-of-network ATM fee,PAID,30,Strip Branch
+35,172,MAINTENANCE,12,2024-07-31,Monthly maintenance fee,PAID,32,Sixth Street Branch
+36,175,MAINTENANCE,12,2024-08-31,Monthly maintenance fee,PENDING,34,Midtown Branch
+37,101,MAINTENANCE,0,2024-03-31,Monthly fee - waived (premium),WAIVED,1,Main Branch
+38,105,MAINTENANCE,0,2024-02-29,Monthly fee - waived (premium),WAIVED,4,North Branch
+39,138,MAINTENANCE,0,2024-03-31,Monthly fee - waived (premium),WAIVED,14,Midtown Branch
+40,104,MAINTENANCE,12,2024-03-31,Monthly maintenance fee,PAID,3,West Branch
+41,106,LATE_PAYMENT,25,2024-04-10,Late loan payment fee,PAID,5,East Branch
+42,119,MAINTENANCE,12,2024-04-30,Monthly maintenance fee,PAID,7,Central Branch
+43,122,ATM,3,2024-03-28,Out-of-network ATM fee,PAID,8,NorthWest Branch
+44,126,OVERDRAFT,35,2024-04-08,Overdraft fee,PAID,10,Lakeside Branch
+45,137,LATE_PAYMENT,25,2024-06-01,Late payment fee,PAID,13,Metro Branch
+46,143,ATM,3,2024-05-25,Out-of-network ATM fee,PAID,15,Garden Branch
+47,149,OVERDRAFT,35,2024-07-12,Overdraft fee,PENDING,10,Lakeside Branch
+48,153,MAINTENANCE,12,2024-06-30,Monthly maintenance fee,PAID,13,Metro Branch
+49,155,ATM,3,2024-06-28,Out-of-network ATM fee,PAID,15,Garden Branch
+50,157,OVERDRAFT,35,2024-07-03,Overdraft fee,PENDING,2,Downtown Branch
+51,161,MAINTENANCE,12,2024-07-31,Monthly maintenance fee,PENDING,5,East Branch
+52,163,ATM,3,2024-10-28,Out-of-network ATM fee,PENDING,7,Central Branch
+53,165,LATE_PAYMENT,25,2024-07-19,Late payment fee,PAID,9,Harbor Branch
+54,167,MAINTENANCE,12,2024-04-30,Monthly maintenance fee,PAID,10,Lakeside Branch
+55,172,ATM,3,2024-07-20,Out-of-network ATM fee,PAID,32,Sixth Street Branch
+56,175,OVERDRAFT,35,2024-08-20,Overdraft fee,PENDING,34,Midtown Branch
+57,177,MAINTENANCE,0,2024-08-31,Monthly fee - waived (premium),WAIVED,35,Uptown Branch
+58,181,TRANSFER,5,2024-08-08,Wire transfer fee,PAID,38,Research Branch
+59,169,MAINTENANCE,0,2024-07-31,Monthly fee - waived,WAIVED,30,Strip Branch
+60,173,MAINTENANCE,0,2024-08-31,Monthly fee - waived (premium),WAIVED,32,Sixth Street Branch

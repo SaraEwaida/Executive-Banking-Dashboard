@@ -1,0 +1,61 @@
+BranchID,BranchName,City,Phone
+1,Main Branch,New York,212-000-0001
+2,Downtown Branch,New York,212-000-0002
+3,West Branch,Los Angeles,310-000-0001
+4,North Branch,Chicago,312-000-0001
+5,East Branch,Houston,713-000-0001
+6,South Branch,Miami,305-000-0001
+7,Central Branch,Dallas,214-000-0001
+8,NorthWest Branch,Seattle,206-000-0001
+9,Harbor Branch,Boston,617-000-0001
+10,Lakeside Branch,Denver,720-000-0001
+11,Bay Branch,San Francisco,415-000-0001
+12,Riverside Branch,Phoenix,602-000-0001
+13,Metro Branch,Philadelphia,215-000-0001
+14,Midtown Branch,Atlanta,404-000-0001
+15,Garden Branch,Portland,503-000-0001
+16,East Side Branch,New York,212-000-0004
+17,Sunset Branch,Los Angeles,310-000-0003
+18,Midway Branch,Chicago,312-000-0002
+19,River Oaks Branch,Houston,713-000-0002
+20,Coconut Grove Branch,Miami,305-000-0002
+21,Uptown Branch,Dallas,214-000-0002
+22,Capitol Hill Branch,Seattle,206-000-0002
+23,Back Bay Branch,Boston,617-000-0002
+24,Cherry Creek Branch,Denver,720-000-0002
+25,Financial District,San Francisco,415-000-0002
+26,Scottsdale Branch,Phoenix,602-000-0002
+27,Center City Branch,Philadelphia,215-000-0002
+28,Buckhead Branch,Atlanta,404-000-0002
+29,Pearl District Branch,Portland,503-000-0002
+30,Strip Branch,Las Vegas,702-000-0001
+31,Broadway Branch,Nashville,615-000-0001
+32,Sixth Street Branch,Austin,512-000-0001
+33,Gaslamp Branch,San Diego,619-000-0001
+34,Midtown Branch,Detroit,313-000-0001
+35,Uptown Branch,Minneapolis,612-000-0001
+36,Gateway Branch,St. Louis,314-000-0001
+37,Inner Harbor Branch,Baltimore,410-000-0001
+38,Research Branch,Raleigh,919-000-0001
+39,Uptown Branch,Charlotte,704-000-0001
+40,Circle Center Branch,Indianapolis,317-000-0001
+41,Short North Branch,Columbus,614-000-0001
+42,Riverside Branch,Jacksonville,904-000-0001
+43,Downtown Branch,Memphis,901-000-0001
+44,Bardstown Branch,Louisville,502-000-0001
+45,Carytown Branch,Richmond,804-000-0001
+46,Plaza Branch,Kansas City,816-000-0001
+47,Temple Square Branch,Salt Lake City,801-000-0001
+48,International Branch,Orlando,407-000-0001
+49,Ybor City Branch,Tampa,813-000-0001
+50,Midtown Branch,Sacramento,916-000-0001
+51,Old Town Branch,Albuquerque,505-000-0001
+52,University Branch,Tucson,520-000-0001
+53,Tower Branch,Fresno,559-000-0001
+54,Uptown Branch,Oakland,510-000-0001
+55,Downtown Branch,Bakersfield,661-000-0001
+56,Entertainment Branch,Arlington,817-000-0001
+57,Old Town Branch,Wichita,316-000-0001
+58,Old Market Branch,Omaha,402-000-0001
+59,University Branch,Cleveland,216-000-0001
+60,Brookside Branch,Tulsa,918-000-0001

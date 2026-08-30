@@ -1,0 +1,41 @@
+===========================================================
+  BANKING EXECUTIVE DASHBOARD  —  HOW TO OPEN (30 seconds)
+===========================================================
+
+The Power BI file already has the DATA loaded and ALL the
+visuals built (6 pages + a bonus page). You do NOT build
+anything. Just open it and click Refresh once.
+
+STEP 1 — Unzip this whole folder first (don't open inside the zip).
+
+STEP 2 — Double-click the file:
+         "Banking Executive Dashboard.pbip"
+         (it has the yellow Power BI icon)
+
+STEP 3 — If Power BI says it can't open a .pbip:
+         File > Options and settings > Options >
+         Preview features > tick
+         "Power BI Project (.pbip) save option" > OK > restart.
+
+STEP 4 — When it opens, the tables/charts may look empty.
+         Click the "Refresh" button on the Home ribbon ONCE.
+         --> All data and every chart fill in immediately.
+         (This is normal for this file type. Nothing is missing.)
+
+STEP 5 (optional) — To get a single .pbix file to hand in:
+         File > Save as > choose Power BI file (.pbix).
+
+WHAT'S INSIDE
+  Page 1  Executive Overview   (6 KPI cards + 4 charts)
+  Page 2  Customer Insights
+  Page 3  Accounts
+  Page 4  Transactions
+  Page 5  Loans
+  Page 6  Branch Performance
+  Page 7  BONUS - Cards & Fees
+  + 37 DAX measures in the _Measures table
+  + full data model with all relationships
+
+If it still won't open or looks wrong, send a screenshot of
+what you see and it'll be fixed fast.
+===========================================================

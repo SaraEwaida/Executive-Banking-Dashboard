@@ -1,0 +1,1222 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Branches\", \"Customers\", \"Accounts\", \"Transactions\", \"Loans\", \"Employees\", \"Cards\", \"Fees\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DaxQueryView_Desktop\",\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "Customers_Branches",
+        "fromColumn": "BranchID",
+        "fromTable": "Customers",
+        "toColumn": "BranchID",
+        "toTable": "Branches"
+      },
+      {
+        "name": "Accounts_Customers",
+        "fromColumn": "CustomerID",
+        "fromTable": "Accounts",
+        "toColumn": "CustomerID",
+        "toTable": "Customers"
+      },
+      {
+        "name": "Transactions_Accounts",
+        "fromColumn": "AccountID",
+        "fromTable": "Transactions",
+        "toColumn": "AccountID",
+        "toTable": "Accounts"
+      },
+      {
+        "name": "Loans_Customers",
+        "fromColumn": "CustomerID",
+        "fromTable": "Loans",
+        "toColumn": "CustomerID",
+        "toTable": "Customers"
+      },
+      {
+        "name": "Cards_Accounts",
+        "fromColumn": "AccountID",
+        "fromTable": "Cards",
+        "toColumn": "AccountID",
+        "toTable": "Accounts"
+      },
+      {
+        "name": "Fees_Accounts",
+        "fromColumn": "AccountID",
+        "fromTable": "Fees",
+        "toColumn": "AccountID",
+        "toTable": "Accounts"
+      },
+      {
+        "name": "Employees_Branches",
+        "fromColumn": "BranchID",
+        "fromTable": "Employees",
+        "toColumn": "BranchID",
+        "toTable": "Branches"
+      },
+      {
+        "name": "Date_Transactions",
+        "fromColumn": "TransDate",
+        "fromTable": "Transactions",
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "Date_Customers",
+        "fromColumn": "JoinDate",
+        "fromTable": "Customers",
+        "isActive": false,
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "Date_Accounts",
+        "fromColumn": "OpenDate",
+        "fromTable": "Accounts",
+        "isActive": false,
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "Date_Loans",
+        "fromColumn": "StartDate",
+        "fromTable": "Loans",
+        "isActive": false,
+        "toColumn": "Date",
+        "toTable": "Date"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Branches",
+        "columns": [
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "6b5b1ba5-60de-43f5-bfa2-2fabe0bcb533",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "28539a26-f466-4521-855f-fde0573572dd",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "lineageTag": "17f1469d-6849-49b4-a990-4c291ef28ff6",
+            "sourceColumn": "City",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "lineageTag": "6508e273-f064-458d-b858-a045b2c3f5d6",
+            "sourceColumn": "Phone",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "1942046d-f732-402d-96f4-bffa9cd7b880",
+        "partitions": [
+          {
+            "name": "Branches",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"QnJhbmNoSUQsQnJhbmNoTmFtZSxDaXR5LFBob25lDQoxLE1haW4gQnJhbmNoLE5ldyBZb3JrLDIxMi0wMDAtMDAwMQ0KMixEb3dudG93biBCcmFuY2gsTmV3IFlvcmssMjEyLTAwMC0wMDAyDQozLFdlc3QgQnJhbmNoLExvcyBBbmdlbGVzLDMxMC0wMDAtMDAwMQ0KNCxOb3J0aCBCcmFuY2gsQ2hpY2FnbywzMTItMDAwLTAwMDENCjUsRWFzdCBCcmFuY2gsSG91c3Rvbiw3MTMtMDAwLTAwMDENCjYsU291dGggQnJhbmNoLE1pYW1pLDMwNS0wMDAtMDAwMQ0KNyxDZW50cmFsIEJyYW5jaCxEYWxsYXMsMjE0LTAwMC0wMDAxDQo4LE5vcnRoV2VzdCBCcmFuY2gsU2VhdHRsZSwyMDYtMDAwLTAwMDENCjksSGFyYm9yIEJyYW5jaCxCb3N0b24sNjE3LTAwMC0wMDAxDQoxMCxMYWtlc2lkZSBCcmFuY2gsRGVudmVyLDcyMC0wMDAtMDAwMQ0KMTEsQmF5IEJyYW5jaCxTYW4gRnJhbmNpc2NvLDQxNS0wMDAtMDAwMQ0KMTIsUml2ZXJzaWRlIEJyYW5jaCxQaG9lbml4LDYwMi0wMDAtMDAwMQ0KMTMsTWV0cm8gQnJhbmNoLFBoaWxhZGVscGhpYSwyMTUtMDAwLTAwMDENCjE0LE1pZHRvd24gQnJhbmNoLEF0bGFudGEsNDA0LTAwMC0wMDAxDQoxNSxHYXJkZW4gQnJhbmNoLFBvcnRsYW5kLDUwMy0wMDAtMDAwMQ0KMTYsRWFzdCBTaWRlIEJyYW5jaCxOZXcgWW9yaywyMTItMDAwLTAwMDQNCjE3LFN1bnNldCBCcmFuY2gsTG9zIEFuZ2VsZXMsMzEwLTAwMC0wMDAzDQoxOCxNaWR3YXkgQnJhbmNoLENoaWNhZ28sMzEyLTAwMC0wMDAyDQoxOSxSaXZlciBPYWtzIEJyYW5jaCxIb3VzdG9uLDcxMy0wMDAtMDAwMg0KMjAsQ29jb251dCBHcm92ZSBCcmFuY2gsTWlhbWksMzA1LTAwMC0wMDAyDQoyMSxVcHRvd24gQnJhbmNoLERhbGxhcywyMTQtMDAwLTAwMDINCjIyLENhcGl0b2wgSGlsbCBCcmFuY2gsU2VhdHRsZSwyMDYtMDAwLTAwMDINCjIzLEJhY2sgQmF5IEJyYW5jaCxCb3N0b24sNjE3LTAwMC0wMDAyDQoyNCxDaGVycnkgQ3JlZWsgQnJhbmNoLERlbnZlciw3MjAtMDAwLTAwMDINCjI1LEZpbmFuY2lhbCBEaXN0cmljdCxTYW4gRnJhbmNpc2NvLDQxNS0wMDAtMDAwMg0KMjYsU2NvdHRzZGFsZSBCcmFuY2gsUGhvZW5peCw2MDItMDAwLTAwMDINCjI3LENlbnRlciBDaXR5IEJyYW5jaCxQaGlsYWRlbHBoaWEsMjE1LTAwMC0wMDAyDQoyOCxCdWNraGVhZCBCcmFuY2gsQXRsYW50YSw0MDQtMDAwLTAwMDINCjI5LFBlYXJsIERpc3RyaWN0IEJyYW5jaCxQb3J0bGFuZCw1MDMtMDAwLTAwMDINCjMwLFN0cmlwIEJyYW5jaCxMYXMgVmVnYXMsNzAyLTAwMC0wMDAxDQozMSxCcm9hZHdheSBCcmFuY2gsTmFzaHZpbGxlLDYxNS0wMDAtMDAwMQ0KMzIsU2l4dGggU3RyZWV0IEJyYW5jaCxBdXN0aW4sNTEyLTAwMC0wMDAxDQozMyxHYXNsYW1wIEJyYW5jaCxTYW4gRGllZ28sNjE5LTAwMC0wMDAxDQozNCxNaWR0b3duIEJyYW5jaCxEZXRyb2l0LDMxMy0wMDAtMDAwMQ0KMzUsVXB0b3duIEJyYW5jaCxNaW5uZWFwb2xpcyw2MTItMDAwLTAwMDENCjM2LEdhdGV3YXkgQnJhbmNoLFN0LiBMb3VpcywzMTQtMDAwLTAwMDENCjM3LElubmVyIEhhcmJvciBCcmFuY2gsQmFsdGltb3JlLDQxMC0wMDAtMDAwMQ0KMzgsUmVzZWFyY2ggQnJhbmNoLFJhbGVpZ2gsOTE5LTAwMC0wMDAxDQozOSxVcHRvd24gQnJhbmNoLENoYXJsb3R0ZSw3MDQtMDAwLTAwMDENCjQwLENpcmNsZSBDZW50ZXIgQnJhbmNoLEluZGlhbmFwb2xpcywzMTctMDAwLTAwMDENCjQxLFNob3J0IE5vcnRoIEJyYW5jaCxDb2x1bWJ1cyw2MTQtMDAwLTAwMDENCjQyLFJpdmVyc2lkZSBCcmFuY2gsSmFja3NvbnZpbGxlLDkwNC0wMDAtMDAwMQ0KNDMsRG93bnRvd24gQnJhbmNoLE1lbXBoaXMsOTAxLTAwMC0wMDAxDQo0NCxCYXJkc3Rvd24gQnJhbmNoLExvdWlzdmlsbGUsNTAyLTAwMC0wMDAxDQo0NSxDYXJ5dG93biBCcmFuY2gsUmljaG1vbmQsODA0LTAwMC0wMDAxDQo0NixQbGF6YSBCcmFuY2gsS2Fuc2FzIENpdHksODE2LTAwMC0wMDAxDQo0NyxUZW1wbGUgU3F1YXJlIEJyYW5jaCxTYWx0IExha2UgQ2l0eSw4MDEtMDAwLTAwMDENCjQ4LEludGVybmF0aW9uYWwgQnJhbmNoLE9ybGFuZG8sNDA3LTAwMC0wMDAxDQo0OSxZYm9yIENpdHkgQnJhbmNoLFRhbXBhLDgxMy0wMDAtMDAwMQ0KNTAsTWlkdG93biBCcmFuY2gsU2FjcmFtZW50byw5MTYtMDAwLTAwMDENCjUxLE9sZCBUb3duIEJyYW5jaCxBbGJ1cXVlcnF1ZSw1MDUtMDAwLTAwMDENCjUyLFVuaXZlcnNpdHkgQnJhbmNoLFR1Y3Nvbiw1MjAtMDAwLTAwMDENCjUzLFRvd2VyIEJyYW5jaCxGcmVzbm8sNTU5LTAwMC0wMDAxDQo1NCxVcHRvd24gQnJhbmNoLE9ha2xhbmQsNTEwLTAwMC0wMDAxDQo1NSxEb3dudG93biBCcmFuY2gsQmFrZXJzZmllbGQsNjYxLTAwMC0wMDAxDQo1NixFbnRlcnRhaW5tZW50IEJyYW5jaCxBcmxpbmd0b24sODE3LTAwMC0wMDAxDQo1NyxPbGQgVG93biBCcmFuY2gsV2ljaGl0YSwzMTYtMDAwLTAwMDENCjU4LE9sZCBNYXJrZXQgQnJhbmNoLE9tYWhhLDQwMi0wMDAtMDAwMQ0KNTksVW5pdmVyc2l0eSBCcmFuY2gsQ2xldmVsYW5kLDIxNi0wMDAtMDAwMQ0KNjAsQnJvb2tzaWRlIEJyYW5jaCxUdWxzYSw5MTgtMDAwLTAwMDENCg==\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"BranchID\", Int64.Type}, {\"BranchName\", type text}, {\"City\", type text}, {\"Phone\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Customers",
+        "columns": [
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "lineageTag": "27675925-1e74-4aed-af05-763c95841b2a",
+            "sourceColumn": "CustomerID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "lineageTag": "6efd642a-857d-4682-a42a-4f42ae41c9a0",
+            "sourceColumn": "FirstName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "lineageTag": "202ee7ae-7ede-46f4-9c7d-64dc8fc4e41d",
+            "sourceColumn": "LastName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerName",
+            "dataType": "string",
+            "lineageTag": "b003229a-dc6d-451b-ba99-c60f7533c6f1",
+            "sourceColumn": "CustomerName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "lineageTag": "b93f78fe-f3d9-4fa5-a8af-27acb09945f9",
+            "sourceColumn": "Email",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "lineageTag": "3d2802c8-1b2f-4f97-b33d-1956bf5f51ca",
+            "sourceColumn": "Phone",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "lineageTag": "1fddd208-8444-46ec-9734-5a3bb54537af",
+            "sourceColumn": "City",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "JoinDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4e608190-cdbf-4ecb-b42d-9960901c03aa",
+            "sourceColumn": "JoinDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "3d9c3ec5-5da1-4e71-92c4-94329e1e9fa3",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "e1f2b272-94d9-4794-a15d-aafc529de532",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a03d80c1-e417-4f1a-8300-a2442efc4a81",
+        "partitions": [
+          {
+            "name": "Customers",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"Q3VzdG9tZXJJRCxGaXJzdE5hbWUsTGFzdE5hbWUsQ3VzdG9tZXJOYW1lLEVtYWlsLFBob25lLENpdHksSm9pbkRhdGUsQnJhbmNoSUQsQnJhbmNoTmFtZQ0KMSxBbGljZSxKb2huc29uLEFsaWNlIEpvaG5zb24sYWxpY2VAZW1haWwuY29tLDU1NS0xMDAxLE5ldyBZb3JrLDIwMjAtMDEtMTUsMSxNYWluIEJyYW5jaA0KMixCb2IsU21pdGgsQm9iIFNtaXRoLGJvYkBlbWFpbC5jb20sNTU1LTEwMDIsTmV3IFlvcmssMjAxOS0wMy0yMiwyLERvd250b3duIEJyYW5jaA0KMyxDYXJvbCxEYXZpcyxDYXJvbCBEYXZpcyxjYXJvbEBlbWFpbC5jb20sNTU1LTEwMDMsTG9zIEFuZ2VsZXMsMjAyMS0wNy0xMCwzLFdlc3QgQnJhbmNoDQo0LERhdmlkLFdpbHNvbixEYXZpZCBXaWxzb24sZGF2aWRAZW1haWwuY29tLDU1NS0xMDA0LENoaWNhZ28sMjAxOC0xMS0wNSw0LE5vcnRoIEJyYW5jaA0KNSxFbW1hLEJyb3duLEVtbWEgQnJvd24sZW1tYUBlbWFpbC5jb20sNTU1LTEwMDUsSG91c3RvbiwyMDIyLTAyLTI4LDUsRWFzdCBCcmFuY2gNCjYsRnJhbmssVGF5bG9yLEZyYW5rIFRheWxvcixmcmFua0BlbWFpbC5jb20sNTU1LTEwMDYsTmV3IFlvcmssMjAyMC0wNi0xNCwxLE1haW4gQnJhbmNoDQo3LEdyYWNlLEFuZGVyc29uLEdyYWNlIEFuZGVyc29uLGdyYWNlQGVtYWlsLmNvbSw1NTUtMTAwNyxMb3MgQW5nZWxlcywyMDIxLTA5LTMwLDMsV2VzdCBCcmFuY2gNCjgsSGVucnksTWFydGluZXosSGVucnkgTWFydGluZXosaGVucnlAZW1haWwuY29tLDU1NS0xMDA4LENoaWNhZ28sMjAxOS0xMi0wMSw0LE5vcnRoIEJyYW5jaA0KOSxJcmVuZSxHYXJjaWEsSXJlbmUgR2FyY2lhLGlyZW5lQGVtYWlsLmNvbSw1NTUtMTAwOSxIb3VzdG9uLDIwMjMtMDEtMjAsNSxFYXN0IEJyYW5jaA0KMTAsSmFtZXMsTGVlLEphbWVzIExlZSxqYW1lc0BlbWFpbC5jb20sNTU1LTEwMTAsTmV3IFlvcmssMjAxNy0wOC0xOCwyLERvd250b3duIEJyYW5jaA0KMTEsTGlhbSxUaG9tcHNvbixMaWFtIFRob21wc29uLGxpYW1AZW1haWwuY29tLDU1NS0yMDAxLE1pYW1pLDIwMjEtMDMtMTUsNixTb3V0aCBCcmFuY2gNCjEyLFNvcGhpYSxXYWxrZXIsU29waGlhIFdhbGtlcixzb3BoaWFAZW1haWwuY29tLDU1NS0yMDAyLE1pYW1pLDIwMjAtMDgtMjAsNixTb3V0aCBCcmFuY2gNCjEzLE5vYWgsSGFycmlzLE5vYWggSGFycmlzLG5vYWhAZW1haWwuY29tLDU1NS0yMDAzLERhbGxhcywyMDE5LTExLTEwLDcsQ2VudHJhbCBCcmFuY2gNCjE0LE9saXZpYSxDbGFyayxPbGl2aWEgQ2xhcmssb2xpdmlhQGVtYWlsLmNvbSw1NTUtMjAwNCxEYWxsYXMsMjAyMi0wMS0wNSw3LENlbnRyYWwgQnJhbmNoDQoxNSxXaWxsaWFtLExld2lzLFdpbGxpYW0gTGV3aXMsd2lsbGlhbUBlbWFpbC5jb20sNTU1LTIwMDUsU2VhdHRsZSwyMDE4LTA2LTI1LDgsTm9ydGhXZXN0IEJyYW5jaA0KMTYsRW1tYSxSb2JpbnNvbixFbW1hIFJvYmluc29uLGVtbWEyQGVtYWlsLmNvbSw1NTUtMjAwNixTZWF0dGxlLDIwMjEtMTItMzAsOCxOb3J0aFdlc3QgQnJhbmNoDQoxNyxKYW1lcyxZb3VuZyxKYW1lcyBZb3VuZyxqeW91bmdAZW1haWwuY29tLDU1NS0yMDA3LEJvc3RvbiwyMDIwLTA0LTE4LDksSGFyYm9yIEJyYW5jaA0KMTgsQXZhLEFsbGVuLEF2YSBBbGxlbixhdmFAZW1haWwuY29tLDU1NS0yMDA4LEJvc3RvbiwyMDE5LTA3LTIyLDksSGFyYm9yIEJyYW5jaA0KMTksQmVuamFtaW4sS2luZyxCZW5qYW1pbiBLaW5nLGJlbkBlbWFpbC5jb20sNTU1LTIwMDksRGVudmVyLDIwMjItMDktMTQsMTAsTGFrZXNpZGUgQnJhbmNoDQoyMCxNaWEsV3JpZ2h0LE1pYSBXcmlnaHQsbWlhQGVtYWlsLmNvbSw1NTUtMjAxMCxEZW52ZXIsMjAyMS0wNS0wMywxMCxMYWtlc2lkZSBCcmFuY2gNCjIxLEx1Y2FzLFNjb3R0LEx1Y2FzIFNjb3R0LGx1Y2FzQGVtYWlsLmNvbSw1NTUtMjAxMSxTYW4gRnJhbmNpc2NvLDIwMTgtMDMtMjgsMTEsQmF5IEJyYW5jaA0KMjIsQ2hhcmxvdHRlLEdyZWVuLENoYXJsb3R0ZSBHcmVlbixjaGFybG90dGVAZW1haWwuY29tLDU1NS0yMDEyLFNhbiBGcmFuY2lzY28sMjAyMC0xMC0xNSwxMSxCYXkgQnJhbmNoDQoyMyxNYXNvbixCYWtlcixNYXNvbiBCYWtlcixtYXNvbkBlbWFpbC5jb20sNTU1LTIwMTMsUGhvZW5peCwyMDE5LTAyLTExLDEyLFJpdmVyc2lkZSBCcmFuY2gNCjI0LEFtZWxpYSxBZGFtcyxBbWVsaWEgQWRhbXMsYW1lbGlhQGVtYWlsLmNvbSw1NTUtMjAxNCxQaG9lbml4LDIwMjEtMDgtMDcsMTIsUml2ZXJzaWRlIEJyYW5jaA0KMjUsRXRoYW4sTmVsc29uLEV0aGFuIE5lbHNvbixldGhhbkBlbWFpbC5jb20sNTU1LTIwMTUsUGhpbGFkZWxwaGlhLDIwMjAtMDYtMTksMTMsTWV0cm8gQnJhbmNoDQoyNixIYXJwZXIsQ2FydGVyLEhhcnBlciBDYXJ0ZXIsaGFycGVyQGVtYWlsLmNvbSw1NTUtMjAxNixQaGlsYWRlbHBoaWEsMjAyMi0wMy0yNSwxMyxNZXRybyBCcmFuY2gNCjI3LEFsZXhhbmRlcixNaXRjaGVsbCxBbGV4YW5kZXIgTWl0Y2hlbGwsYWxleEBlbWFpbC5jb20sNTU1LTIwMTcsQXRsYW50YSwyMDE5LTA5LTA4LDE0LE1pZHRvd24gQnJhbmNoDQoyOCxFdmVseW4sUGVyZXosRXZlbHluIFBlcmV6LGV2ZWx5bkBlbWFpbC5jb20sNTU1LTIwMTgsQXRsYW50YSwyMDIxLTAxLTE0LDE0LE1pZHRvd24gQnJhbmNoDQoyOSxEYW5pZWwsUm9iZXJ0cyxEYW5pZWwgUm9iZXJ0cyxkYW5pZWxAZW1haWwuY29tLDU1NS0yMDE5LFBvcnRsYW5kLDIwMjAtMDctMzAsMTUsR2FyZGVuIEJyYW5jaA0KMzAsQWJpZ2FpbCxUdXJuZXIsQWJpZ2FpbCBUdXJuZXIsYWJpZ2FpbEBlbWFpbC5jb20sNTU1LTIwMjAsUG9ydGxhbmQsMjAyMi0xMS0yMCwxNSxHYXJkZW4gQnJhbmNoDQozMSxNaWNoYWVsLFBoaWxsaXBzLE1pY2hhZWwgUGhpbGxpcHMsbWljaGFlbEBlbWFpbC5jb20sNTU1LTIwMjEsTWlhbWksMjAxOC0xMi0wNSw2LFNvdXRoIEJyYW5jaA0KMzIsRW1pbHksQ2FtcGJlbGwsRW1pbHkgQ2FtcGJlbGwsZW1pbHlAZW1haWwuY29tLDU1NS0yMDIyLERhbGxhcywyMDIwLTAzLTE3LDcsQ2VudHJhbCBCcmFuY2gNCjMzLE1hdHRoZXcsUGFya2VyLE1hdHRoZXcgUGFya2VyLG1hdHRoZXdAZW1haWwuY29tLDU1NS0yMDIzLFNlYXR0bGUsMjAyMS0wNi0yMiw4LE5vcnRoV2VzdCBCcmFuY2gNCjM0LEVsaXphYmV0aCxFdmFucyxFbGl6YWJldGggRXZhbnMsZWxpemFiZXRoQGVtYWlsLmNvbSw1NTUtMjAyNCxCb3N0b24sMjAxOS0xMC0wOSw5LEhhcmJvciBCcmFuY2gNCjM1LEpvc2VwaCxFZHdhcmRzLEpvc2VwaCBFZHdhcmRzLGpvc2VwaEBlbWFpbC5jb20sNTU1LTIwMjUsRGVudmVyLDIwMjItMDQtMTMsMTAsTGFrZXNpZGUgQnJhbmNoDQozNixTb2ZpYSxDb2xsaW5zLFNvZmlhIENvbGxpbnMsc29maWFAZW1haWwuY29tLDU1NS0yMDI2LFNhbiBGcmFuY2lzY28sMjAyMC0wOS0yNywxMSxCYXkgQnJhbmNoDQozNyxEYXZpZCxTdGV3YXJ0LERhdmlkIFN0ZXdhcnQsZHN0ZXdhcnRAZW1haWwuY29tLDU1NS0yMDI3LFBob2VuaXgsMjAxOC0wOC0xNiwxMixSaXZlcnNpZGUgQnJhbmNoDQozOCxWaWN0b3JpYSxTYW5jaGV6LFZpY3RvcmlhIFNhbmNoZXosdmljdG9yaWFAZW1haWwuY29tLDU1NS0yMDI4LFBoaWxhZGVscGhpYSwyMDIxLTAyLTA4LDEzLE1ldHJvIEJyYW5jaA0KMzksQW5kcmV3LE1vcnJpcyxBbmRyZXcgTW9ycmlzLGFuZHJld0BlbWFpbC5jb20sNTU1LTIwMjksQXRsYW50YSwyMDIwLTA1LTIxLDE0LE1pZHRvd24gQnJhbmNoDQo0MCxHcmFjZSxSb2dlcnMsR3JhY2UgUm9nZXJzLGdyb2dlcnNAZW1haWwuY29tLDU1NS0yMDMwLFBvcnRsYW5kLDIwMjItMDgtMDQsMTUsR2FyZGVuIEJyYW5jaA0KNDEsSm9zaHVhLFJlZWQsSm9zaHVhIFJlZWQsam9zaHVhQGVtYWlsLmNvbSw1NTUtMjAzMSxOZXcgWW9yaywyMDE5LTAxLTMwLDEsTWFpbiBCcmFuY2gNCjQyLFNjYXJsZXR0LENvb2ssU2NhcmxldHQgQ29vayxzY2FybGV0dEBlbWFpbC5jb20sNTU1LTIwMzIsTmV3IFlvcmssMjAyMS0wNy0xNiwyLERvd250b3duIEJyYW5jaA0KNDMsUnlhbixNb3JnYW4sUnlhbiBNb3JnYW4scnlhbkBlbWFpbC5jb20sNTU1LTIwMzMsTG9zIEFuZ2VsZXMsMjAyMC0xMS0wMywzLFdlc3QgQnJhbmNoDQo0NCxBcmlhLEJlbGwsQXJpYSBCZWxsLGFyaWFAZW1haWwuY29tLDU1NS0yMDM0LENoaWNhZ28sMjAxOC0wNS0yNyw0LE5vcnRoIEJyYW5jaA0KNDUsTmF0aGFuLE11cnBoeSxOYXRoYW4gTXVycGh5LG5hdGhhbkBlbWFpbC5jb20sNTU1LTIwMzUsSG91c3RvbiwyMDIyLTA2LTEwLDUsRWFzdCBCcmFuY2gNCjQ2LFBlbmVsb3BlLEJhaWxleSxQZW5lbG9wZSBCYWlsZXkscGVuZWxvcGVAZW1haWwuY29tLDU1NS0yMDM2LE1pYW1pLDIwMTktMDQtMTQsNixTb3V0aCBCcmFuY2gNCjQ3LEFhcm9uLFJpdmVyYSxBYXJvbiBSaXZlcmEsYWFyb25AZW1haWwuY29tLDU1NS0yMDM3LERhbGxhcywyMDIxLTEwLTI4LDcsQ2VudHJhbCBCcmFuY2gNCjQ4LExheWxhLENvb3BlcixMYXlsYSBDb29wZXIsbGF5bGFAZW1haWwuY29tLDU1NS0yMDM4LFNlYXR0bGUsMjAyMC0wMi0wOSw4LE5vcnRoV2VzdCBCcmFuY2gNCjQ5LER5bGFuLFJpY2hhcmRzb24sRHlsYW4gUmljaGFyZHNvbixkeWxhbkBlbWFpbC5jb20sNTU1LTIwMzksQm9zdG9uLDIwMjItMDctMTksOSxIYXJib3IgQnJhbmNoDQo1MCxab2UsQ294LFpvZSBDb3gsem9lQGVtYWlsLmNvbSw1NTUtMjA0MCxEZW52ZXIsMjAyMS0wMy0wNiwxMCxMYWtlc2lkZSBCcmFuY2gNCjUxLFR5bGVyLEJlbm5ldHQsVHlsZXIgQmVubmV0dCx0eWxlckBlbWFpbC5jb20sNTU1LTMwMDEsTGFzIFZlZ2FzLDIwMjEtMDUtMTUsMzAsU3RyaXAgQnJhbmNoDQo1MixNYWRpc29uLEZsb3JlcyxNYWRpc29uIEZsb3JlcyxtYWRpc29uQGVtYWlsLmNvbSw1NTUtMzAwMixOYXNodmlsbGUsMjAyMC0wOS0xMiwzMSxCcm9hZHdheSBCcmFuY2gNCjUzLENhbGViLFdhc2hpbmd0b24sQ2FsZWIgV2FzaGluZ3RvbixjYWxlYkBlbWFpbC5jb20sNTU1LTMwMDMsQXVzdGluLDIwMTktMDQtMDgsMzIsU2l4dGggU3RyZWV0IEJyYW5jaA0KNTQsTmF0YWxpZSxCdXRsZXIsTmF0YWxpZSBCdXRsZXIsbmF0YWxpZUBlbWFpbC5jb20sNTU1LTMwMDQsU2FuIERpZWdvLDIwMjItMDItMTQsMzMsR2FzbGFtcCBCcmFuY2gNCjU1LExvZ2FuLFNpbW1vbnMsTG9nYW4gU2ltbW9ucyxsb2dhbkBlbWFpbC5jb20sNTU1LTMwMDUsRGV0cm9pdCwyMDIxLTA4LTIwLDM0LE1pZHRvd24gQnJhbmNoDQo1NixDaGxvZSxGb3N0ZXIsQ2hsb2UgRm9zdGVyLGNobG9lQGVtYWlsLmNvbSw1NTUtMzAwNixNaW5uZWFwb2xpcywyMDIwLTExLTMwLDM1LFVwdG93biBCcmFuY2gNCjU3LEh1bnRlcixHb256YWxleixIdW50ZXIgR29uemFsZXosaHVudGVyQGVtYWlsLmNvbSw1NTUtMzAwNyxTdC4gTG91aXMsMjAxOC0wNy0yNSwzNixHYXRld2F5IEJyYW5jaA0KNTgsU3RlbGxhLEJyeWFudCxTdGVsbGEgQnJ5YW50LHN0ZWxsYUBlbWFpbC5jb20sNTU1LTMwMDgsQmFsdGltb3JlLDIwMjItMDQtMDUsMzcsSW5uZXIgSGFyYm9yIEJyYW5jaA0KNTksQ29ubm9yLEFsZXhhbmRlcixDb25ub3IgQWxleGFuZGVyLGNvbm5vckBlbWFpbC5jb20sNTU1LTMwMDksUmFsZWlnaCwyMDE5LTEwLTE4LDM4LFJlc2VhcmNoIEJyYW5jaA0KNjAsTm9yYSxSdXNzZWxsLE5vcmEgUnVzc2VsbCxub3JhQGVtYWlsLmNvbSw1NTUtMzAxMCxDaGFybG90dGUsMjAyMS0xMi0wOCwzOSxVcHRvd24gQnJhbmNoDQo=\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"CustomerID\", Int64.Type}, {\"FirstName\", type text}, {\"LastName\", type text}, {\"CustomerName\", type text}, {\"Email\", type text}, {\"Phone\", type text}, {\"City\", type text}, {\"JoinDate\", type date}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Accounts",
+        "columns": [
+          {
+            "name": "AccountID",
+            "dataType": "int64",
+            "lineageTag": "e441245f-7abe-4deb-b8b9-0a4d7b1e75bd",
+            "sourceColumn": "AccountID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "lineageTag": "9472e141-c26b-424e-8074-4039d044a0b4",
+            "sourceColumn": "CustomerID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AccountType",
+            "dataType": "string",
+            "lineageTag": "ed5f620c-6c8f-4976-9a8d-12d2ad7e2ccc",
+            "sourceColumn": "AccountType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Balance",
+            "dataType": "double",
+            "lineageTag": "c6400caf-a269-48dc-ac43-a54651577c99",
+            "sourceColumn": "Balance",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OpenDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "6c058d61-2ce2-46e2-810e-f5ad240b036c",
+            "sourceColumn": "OpenDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "322a9c8a-f92d-4d24-ab44-880f29142b92",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "d9a0cb37-c8ba-489e-8cc0-8cc2127f1bf4",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "b561381a-e765-4163-a2b0-ab3dd87f192c",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "lineageTag": "7ca402d0-70d2-43ac-9ef5-5aa4ea95c1d1",
+            "sourceColumn": "City",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "cf69e237-d812-4dcf-92e4-1bd745688ab9",
+        "partitions": [
+          {
+            "name": "Accounts",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"QWNjb3VudElELEN1c3RvbWVySUQsQWNjb3VudFR5cGUsQmFsYW5jZSxPcGVuRGF0ZSxTdGF0dXMsQnJhbmNoSUQsQnJhbmNoTmFtZSxDaXR5DQoxMDEsMSxTQVZJTkdTLDE1MDAwLDIwMjAtMDEtMTUsQUNUSVZFLDEsTWFpbiBCcmFuY2gsTmV3IFlvcmsNCjEwMiwxLENIRUNLSU5HLDMyMDAsMjAyMC0wMy0wMSxBQ1RJVkUsMSxNYWluIEJyYW5jaCxOZXcgWW9yaw0KMTAzLDIsU0FWSU5HUyw4NTAwLDIwMTktMDMtMjIsQUNUSVZFLDIsRG93bnRvd24gQnJhbmNoLE5ldyBZb3JrDQoxMDQsMyxDSEVDS0lORywxMjAwLDIwMjEtMDctMTAsQUNUSVZFLDMsV2VzdCBCcmFuY2gsTG9zIEFuZ2VsZXMNCjEwNSw0LFNBVklOR1MsNTAwMDAsMjAxOC0xMS0wNSxBQ1RJVkUsNCxOb3J0aCBCcmFuY2gsQ2hpY2Fnbw0KMTA2LDUsQ0hFQ0tJTkcsNzUwLDIwMjItMDItMjgsQUNUSVZFLDUsRWFzdCBCcmFuY2gsSG91c3Rvbg0KMTA3LDYsU0FWSU5HUywyMjAwMCwyMDIwLTA2LTE0LEFDVElWRSwxLE1haW4gQnJhbmNoLE5ldyBZb3JrDQoxMDgsNyxDSEVDS0lORyw0MzAwLDIwMjEtMDktMzAsQUNUSVZFLDMsV2VzdCBCcmFuY2gsTG9zIEFuZ2VsZXMNCjEwOSw4LFNBVklOR1MsOTgwMCwyMDE5LTEyLTAxLEFDVElWRSw0LE5vcnRoIEJyYW5jaCxDaGljYWdvDQoxMTAsOSxDSEVDS0lORywzMDAsMjAyMy0wMS0yMCxBQ1RJVkUsNSxFYXN0IEJyYW5jaCxIb3VzdG9uDQoxMTEsMTAsU0FWSU5HUyw2NzAwMCwyMDE3LTA4LTE4LEFDVElWRSwyLERvd250b3duIEJyYW5jaCxOZXcgWW9yaw0KMTEyLDEwLENIRUNLSU5HLDU1MDAsMjAxOC0wMS0xMCxBQ1RJVkUsMixEb3dudG93biBCcmFuY2gsTmV3IFlvcmsNCjExMywyLENIRUNLSU5HLDAsMjAxNS0wNS0wMSxDTE9TRUQsMixEb3dudG93biBCcmFuY2gsTmV3IFlvcmsNCjExNCwxMSxTQVZJTkdTLDI1MDAwLDIwMjEtMDMtMTUsQUNUSVZFLDYsU291dGggQnJhbmNoLE1pYW1pDQoxMTUsMTEsQ0hFQ0tJTkcsMzUwMCwyMDIxLTA0LTAxLEFDVElWRSw2LFNvdXRoIEJyYW5jaCxNaWFtaQ0KMTE2LDEyLFNBVklOR1MsMTgwMDAsMjAyMC0wOC0yMCxBQ1RJVkUsNixTb3V0aCBCcmFuY2gsTWlhbWkNCjExNywxMyxDSEVDS0lORyw3MjAwLDIwMTktMTEtMTAsQUNUSVZFLDcsQ2VudHJhbCBCcmFuY2gsRGFsbGFzDQoxMTgsMTMsU0FWSU5HUyw0NTAwMCwyMDIwLTAxLTE1LEFDVElWRSw3LENlbnRyYWwgQnJhbmNoLERhbGxhcw0KMTE5LDE0LENIRUNLSU5HLDE4MDAsMjAyMi0wMS0wNSxBQ1RJVkUsNyxDZW50cmFsIEJyYW5jaCxEYWxsYXMNCjEyMCwxNSxTQVZJTkdTLDkyMDAwLDIwMTgtMDYtMjUsQUNUSVZFLDgsTm9ydGhXZXN0IEJyYW5jaCxTZWF0dGxlDQoxMjEsMTUsQ0hFQ0tJTkcsODUwMCwyMDE4LTA3LTEwLEFDVElWRSw4LE5vcnRoV2VzdCBCcmFuY2gsU2VhdHRsZQ0KMTIyLDE2LFNBVklOR1MsNTYwMCwyMDIxLTEyLTMwLEFDVElWRSw4LE5vcnRoV2VzdCBCcmFuY2gsU2VhdHRsZQ0KMTIzLDE3LENIRUNLSU5HLDQyMDAsMjAyMC0wNC0xOCxBQ1RJVkUsOSxIYXJib3IgQnJhbmNoLEJvc3Rvbg0KMTI0LDE3LFNBVklOR1MsMzEwMDAsMjAyMC0wNS0wMSxBQ1RJVkUsOSxIYXJib3IgQnJhbmNoLEJvc3Rvbg0KMTI1LDE4LFNBVklOR1MsMTQ1MDAsMjAxOS0wNy0yMixBQ1RJVkUsOSxIYXJib3IgQnJhbmNoLEJvc3Rvbg0KMTI2LDE5LENIRUNLSU5HLDIzMDAsMjAyMi0wOS0xNCxBQ1RJVkUsMTAsTGFrZXNpZGUgQnJhbmNoLERlbnZlcg0KMTI3LDIwLFNBVklOR1MsMTEwMDAsMjAyMS0wNS0wMyxBQ1RJVkUsMTAsTGFrZXNpZGUgQnJhbmNoLERlbnZlcg0KMTI4LDIwLENIRUNLSU5HLDMxMDAsMjAyMS0wNi0wMSxBQ1RJVkUsMTAsTGFrZXNpZGUgQnJhbmNoLERlbnZlcg0KMTI5LDIxLFNBVklOR1MsMTIwMDAwLDIwMTgtMDMtMjgsQUNUSVZFLDExLEJheSBCcmFuY2gsU2FuIEZyYW5jaXNjbw0KMTMwLDIxLENIRUNLSU5HLDE1MDAwLDIwMTgtMDQtMTAsQUNUSVZFLDExLEJheSBCcmFuY2gsU2FuIEZyYW5jaXNjbw0KMTMxLDIyLFNBVklOR1MsODkwMCwyMDIwLTEwLTE1LEFDVElWRSwxMSxCYXkgQnJhbmNoLFNhbiBGcmFuY2lzY28NCjEzMiwyMyxDSEVDS0lORyw0NzAwLDIwMTktMDItMTEsQUNUSVZFLDEyLFJpdmVyc2lkZSBCcmFuY2gsUGhvZW5peA0KMTMzLDIzLFNBVklOR1MsMjcwMDAsMjAxOS0wMy0wMSxBQ1RJVkUsMTIsUml2ZXJzaWRlIEJyYW5jaCxQaG9lbml4DQoxMzQsMjQsU0FWSU5HUyw2MzAwLDIwMjEtMDgtMDcsQUNUSVZFLDEyLFJpdmVyc2lkZSBCcmFuY2gsUGhvZW5peA0KMTM1LDI1LENIRUNLSU5HLDUxMDAsMjAyMC0wNi0xOSxBQ1RJVkUsMTMsTWV0cm8gQnJhbmNoLFBoaWxhZGVscGhpYQ0KMTM2LDI1LFNBVklOR1MsMzgwMDAsMjAyMC0wNy0wMSxBQ1RJVkUsMTMsTWV0cm8gQnJhbmNoLFBoaWxhZGVscGhpYQ0KMTM3LDI2LENIRUNLSU5HLDkwMCwyMDIyLTAzLTI1LEFDVElWRSwxMyxNZXRybyBCcmFuY2gsUGhpbGFkZWxwaGlhDQoxMzgsMjcsU0FWSU5HUyw1NTAwMCwyMDE5LTA5LTA4LEFDVElWRSwxNCxNaWR0b3duIEJyYW5jaCxBdGxhbnRhDQoxMzksMjcsQ0hFQ0tJTkcsOTIwMCwyMDE5LTEwLTAxLEFDVElWRSwxNCxNaWR0b3duIEJyYW5jaCxBdGxhbnRhDQoxNDAsMjgsU0FWSU5HUywxNjAwMCwyMDIxLTAxLTE0LEFDVElWRSwxNCxNaWR0b3duIEJyYW5jaCxBdGxhbnRhDQoxNDEsMjksQ0hFQ0tJTkcsMzgwMCwyMDIwLTA3LTMwLEFDVElWRSwxNSxHYXJkZW4gQnJhbmNoLFBvcnRsYW5kDQoxNDIsMjksU0FWSU5HUywyMjUwMCwyMDIwLTA4LTE1LEFDVElWRSwxNSxHYXJkZW4gQnJhbmNoLFBvcnRsYW5kDQoxNDMsMzAsU0FWSU5HUyw0MTAwLDIwMjItMTEtMjAsQUNUSVZFLDE1LEdhcmRlbiBCcmFuY2gsUG9ydGxhbmQNCjE0NCwzMSxDSEVDS0lORyw2NzAwLDIwMTgtMTItMDUsQUNUSVZFLDYsU291dGggQnJhbmNoLE1pYW1pDQoxNDUsMzEsU0FWSU5HUyw0MzAwMCwyMDE5LTAxLTEwLEFDVElWRSw2LFNvdXRoIEJyYW5jaCxNaWFtaQ0KMTQ2LDMyLFNBVklOR1MsMTk1MDAsMjAyMC0wMy0xNyxBQ1RJVkUsNyxDZW50cmFsIEJyYW5jaCxEYWxsYXMNCjE0NywzMyxDSEVDS0lORywyOTAwLDIwMjEtMDYtMjIsQUNUSVZFLDgsTm9ydGhXZXN0IEJyYW5jaCxTZWF0dGxlDQoxNDgsMzQsU0FWSU5HUyw3MTAwMCwyMDE5LTEwLTA5LEFDVElWRSw5LEhhcmJvciBCcmFuY2gsQm9zdG9uDQoxNDksMzUsQ0hFQ0tJTkcsMTUwMCwyMDIyLTA0LTEzLEFDVElWRSwxMCxMYWtlc2lkZSBCcmFuY2gsRGVudmVyDQoxNTAsMzYsU0FWSU5HUywzMzAwMCwyMDIwLTA5LTI3LEFDVElWRSwxMSxCYXkgQnJhbmNoLFNhbiBGcmFuY2lzY28NCjE1MSwzNixDSEVDS0lORyw3ODAwLDIwMjAtMTAtMTAsQUNUSVZFLDExLEJheSBCcmFuY2gsU2FuIEZyYW5jaXNjbw0KMTUyLDM3LFNBVklOR1MsNDgwMDAsMjAxOC0wOC0xNixBQ1RJVkUsMTIsUml2ZXJzaWRlIEJyYW5jaCxQaG9lbml4DQoxNTMsMzgsQ0hFQ0tJTkcsMzIwMCwyMDIxLTAyLTA4LEFDVElWRSwxMyxNZXRybyBCcmFuY2gsUGhpbGFkZWxwaGlhDQoxNTQsMzksU0FWSU5HUywyNjAwMCwyMDIwLTA1LTIxLEFDVElWRSwxNCxNaWR0b3duIEJyYW5jaCxBdGxhbnRhDQoxNTUsNDAsQ0hFQ0tJTkcsNDQwMCwyMDIyLTA4LTA0LEFDVElWRSwxNSxHYXJkZW4gQnJhbmNoLFBvcnRsYW5kDQoxNTYsNDEsU0FWSU5HUywxMzUwMCwyMDE5LTAxLTMwLEFDVElWRSwxLE1haW4gQnJhbmNoLE5ldyBZb3JrDQoxNTcsNDIsQ0hFQ0tJTkcsMjYwMCwyMDIxLTA3LTE2LEFDVElWRSwyLERvd250b3duIEJyYW5jaCxOZXcgWW9yaw0KMTU4LDQzLFNBVklOR1MsMTcwMDAsMjAyMC0xMS0wMyxBQ1RJVkUsMyxXZXN0IEJyYW5jaCxMb3MgQW5nZWxlcw0KMTU5LDQ0LENIRUNLSU5HLDU5MDAsMjAxOC0wNS0yNyxBQ1RJVkUsNCxOb3J0aCBCcmFuY2gsQ2hpY2Fnbw0KMTYwLDQ0LFNBVklOR1MsNjEwMDAsMjAxOC0wNi0xMCxBQ1RJVkUsNCxOb3J0aCBCcmFuY2gsQ2hpY2Fnbw0KMTYxLDQ1LENIRUNLSU5HLDExMDAsMjAyMi0wNi0xMCxBQ1RJVkUsNSxFYXN0IEJyYW5jaCxIb3VzdG9uDQoxNjIsNDYsU0FWSU5HUywyOTAwMCwyMDE5LTA0LTE0LEFDVElWRSw2LFNvdXRoIEJyYW5jaCxNaWFtaQ0KMTYzLDQ3LENIRUNLSU5HLDM3MDAsMjAyMS0xMC0yOCxBQ1RJVkUsNyxDZW50cmFsIEJyYW5jaCxEYWxsYXMNCjE2NCw0OCxTQVZJTkdTLDQyMDAwLDIwMjAtMDItMDksQUNUSVZFLDgsTm9ydGhXZXN0IEJyYW5jaCxTZWF0dGxlDQoxNjUsNDksQ0hFQ0tJTkcsODAwLDIwMjItMDctMTksQUNUSVZFLDksSGFyYm9yIEJyYW5jaCxCb3N0b24NCjE2Niw1MCxTQVZJTkdTLDEwNTAwLDIwMjEtMDMtMDYsQUNUSVZFLDEwLExha2VzaWRlIEJyYW5jaCxEZW52ZXINCjE2Nyw1MCxDSEVDS0lORywyMjAwLDIwMjEtMDQtMDEsQUNUSVZFLDEwLExha2VzaWRlIEJyYW5jaCxEZW52ZXINCjE2OCwzLFNBVklOR1MsMTUwMDAsMjAyMy0wMS0xMCxBQ1RJVkUsMyxXZXN0IEJyYW5jaCxMb3MgQW5nZWxlcw0KMTY5LDUxLFNBVklOR1MsMzIwMDAsMjAyMS0wNS0xNSxBQ1RJVkUsMzAsU3RyaXAgQnJhbmNoLExhcyBWZWdhcw0KMTcwLDUxLENIRUNLSU5HLDQ4MDAsMjAyMS0wNi0wMSxBQ1RJVkUsMzAsU3RyaXAgQnJhbmNoLExhcyBWZWdhcw0KMTcxLDUyLFNBVklOR1MsMTU1MDAsMjAyMC0wOS0xMixBQ1RJVkUsMzEsQnJvYWR3YXkgQnJhbmNoLE5hc2h2aWxsZQ0KMTcyLDUzLENIRUNLSU5HLDYyMDAsMjAxOS0wNC0wOCxBQ1RJVkUsMzIsU2l4dGggU3RyZWV0IEJyYW5jaCxBdXN0aW4NCjE3Myw1MyxTQVZJTkdTLDc4MDAwLDIwMTktMDUtMDEsQUNUSVZFLDMyLFNpeHRoIFN0cmVldCBCcmFuY2gsQXVzdGluDQoxNzQsNTQsU0FWSU5HUyw5MzAwLDIwMjItMDItMTQsQUNUSVZFLDMzLEdhc2xhbXAgQnJhbmNoLFNhbiBEaWVnbw0KMTc1LDU1LENIRUNLSU5HLDM0MDAsMjAyMS0wOC0yMCxBQ1RJVkUsMzQsTWlkdG93biBCcmFuY2gsRGV0cm9pdA0KMTc2LDU1LFNBVklOR1MsMjEwMDAsMjAyMS0wOS0wMSxBQ1RJVkUsMzQsTWlkdG93biBCcmFuY2gsRGV0cm9pdA0KMTc3LDU2LFNBVklOR1MsNDQwMDAsMjAyMC0xMS0zMCxBQ1RJVkUsMzUsVXB0b3duIEJyYW5jaCxNaW5uZWFwb2xpcw0KMTc4LDU3LENIRUNLSU5HLDcxMDAsMjAxOC0wNy0yNSxBQ1RJVkUsMzYsR2F0ZXdheSBCcmFuY2gsU3QuIExvdWlzDQoxNzksNTgsU0FWSU5HUywxMzgwMCwyMDIyLTA0LTA1LEFDVElWRSwzNyxJbm5lciBIYXJib3IgQnJhbmNoLEJhbHRpbW9yZQ0KMTgwLDU5LENIRUNLSU5HLDU2MDAsMjAxOS0xMC0xOCxBQ1RJVkUsMzgsUmVzZWFyY2ggQnJhbmNoLFJhbGVpZ2gNCjE4MSw1OSxTQVZJTkdTLDM3MDAwLDIwMTktMTEtMDEsQUNUSVZFLDM4LFJlc2VhcmNoIEJyYW5jaCxSYWxlaWdoDQoxODIsNjAsU0FWSU5HUyw4NzAwLDIwMjEtMTItMDgsQUNUSVZFLDM5LFVwdG93biBCcmFuY2gsQ2hhcmxvdHRlDQo=\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"AccountID\", Int64.Type}, {\"CustomerID\", Int64.Type}, {\"AccountType\", type text}, {\"Balance\", type number}, {\"OpenDate\", type date}, {\"Status\", type text}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}, {\"City\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Transactions",
+        "columns": [
+          {
+            "name": "TransactionID",
+            "dataType": "int64",
+            "lineageTag": "bd893265-15d0-4e1f-b077-3d4e1f61bc49",
+            "sourceColumn": "TransactionID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AccountID",
+            "dataType": "int64",
+            "lineageTag": "90863201-93dd-485e-9370-190a10a07d28",
+            "sourceColumn": "AccountID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TransType",
+            "dataType": "string",
+            "lineageTag": "1ed38d26-d147-4e10-817e-012753b2ea47",
+            "sourceColumn": "TransType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Amount",
+            "dataType": "double",
+            "lineageTag": "ae57ad18-2216-4888-ae40-eed20f859d7f",
+            "sourceColumn": "Amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TransDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9261f3f9-7829-4b3d-9b23-e09a1b0cf4cb",
+            "sourceColumn": "TransDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "lineageTag": "962b8969-0dba-4784-b3ce-aac3dc3dca11",
+            "sourceColumn": "Description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "1e59750c-53d0-4489-b2c9-478c0fde1144",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "aa381760-b0fb-4ce3-b39d-143e77846d12",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SignedAmount",
+            "dataType": "double",
+            "lineageTag": "637a240a-6b9d-4851-8d75-533df4eb651c",
+            "sourceColumn": "SignedAmount",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a37fbb03-d320-40a9-ba58-017000c55cb1",
+        "partitions": [
+          {
+            "name": "Transactions",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"VHJhbnNhY3Rpb25JRCxBY2NvdW50SUQsVHJhbnNUeXBlLEFtb3VudCxUcmFuc0RhdGUsRGVzY3JpcHRpb24sQnJhbmNoSUQsQnJhbmNoTmFtZSxTaWduZWRBbW91bnQNCjEwMDEsMTAxLERFUE9TSVQsNTAwMCwyMDI0LTAxLTA1LFNhbGFyeSBkZXBvc2l0LDEsTWFpbiBCcmFuY2gsNTAwMA0KMTAwMiwxMDEsV0lUSERSQVdBTCwxMjAwLDIwMjQtMDEtMTAsUmVudCBwYXltZW50LDEsTWFpbiBCcmFuY2gsLTEyMDANCjEwMDMsMTAyLERFUE9TSVQsODAwLDIwMjQtMDEtMTIsRnJlZWxhbmNlIHBheW1lbnQsMSxNYWluIEJyYW5jaCw4MDANCjEwMDQsMTAzLERFUE9TSVQsMjAwMCwyMDI0LTAxLTE1LFNhbGFyeSBkZXBvc2l0LDIsRG93bnRvd24gQnJhbmNoLDIwMDANCjEwMDUsMTAzLFdJVEhEUkFXQUwsNTAwLDIwMjQtMDEtMTgsR3JvY2VyeSBzaG9wcGluZywyLERvd250b3duIEJyYW5jaCwtNTAwDQoxMDA2LDEwNCxXSVRIRFJBV0FMLDMwMCwyMDI0LTAxLTIwLFV0aWxpdHkgYmlsbCwzLFdlc3QgQnJhbmNoLC0zMDANCjEwMDcsMTA1LERFUE9TSVQsMTAwMDAsMjAyNC0wMS0yMixCdXNpbmVzcyByZXZlbnVlLDQsTm9ydGggQnJhbmNoLDEwMDAwDQoxMDA4LDEwNixXSVRIRFJBV0FMLDIwMCwyMDI0LTAxLTI1LEFUTSB3aXRoZHJhd2FsLDUsRWFzdCBCcmFuY2gsLTIwMA0KMTAwOSwxMDcsREVQT1NJVCwzMDAwLDIwMjQtMDItMDEsU2FsYXJ5IGRlcG9zaXQsMSxNYWluIEJyYW5jaCwzMDAwDQoxMDEwLDEwOCxUUkFOU0ZFUiwxNTAwLDIwMjQtMDItMDUsVHJhbnNmZXIgdG8gc2F2aW5ncywzLFdlc3QgQnJhbmNoLDANCjEwMTEsMTA5LERFUE9TSVQsNDUwMCwyMDI0LTAyLTEwLFNhbGFyeSBkZXBvc2l0LDQsTm9ydGggQnJhbmNoLDQ1MDANCjEwMTIsMTEwLFdJVEhEUkFXQUwsMTAwLDIwMjQtMDItMTIsQVRNIHdpdGhkcmF3YWwsNSxFYXN0IEJyYW5jaCwtMTAwDQoxMDEzLDExMSxERVBPU0lULDIwMDAwLDIwMjQtMDItMTUsSW52ZXN0bWVudCByZXR1cm4sMixEb3dudG93biBCcmFuY2gsMjAwMDANCjEwMTQsMTExLFdJVEhEUkFXQUwsMzAwMCwyMDI0LTAyLTIwLEhvbWUgcmVub3ZhdGlvbiwyLERvd250b3duIEJyYW5jaCwtMzAwMA0KMTAxNSwxMTIsREVQT1NJVCwxMDAwLDIwMjQtMDItMjIsQm9udXMsMixEb3dudG93biBCcmFuY2gsMTAwMA0KMTAxNiwxMTQsREVQT1NJVCw4MDAwLDIwMjQtMDMtMDEsU2FsYXJ5IGRlcG9zaXQsNixTb3V0aCBCcmFuY2gsODAwMA0KMTAxNywxMTQsV0lUSERSQVdBTCwxNTAwLDIwMjQtMDMtMDUsQ2FyIHBheW1lbnQsNixTb3V0aCBCcmFuY2gsLTE1MDANCjEwMTgsMTE1LERFUE9TSVQsMjAwMCwyMDI0LTAzLTA4LEJvbnVzLDYsU291dGggQnJhbmNoLDIwMDANCjEwMTksMTE2LFdJVEhEUkFXQUwsODAwLDIwMjQtMDMtMTAsR3JvY2VyeSBzaG9wcGluZyw2LFNvdXRoIEJyYW5jaCwtODAwDQoxMDIwLDExNyxERVBPU0lULDUwMDAsMjAyNC0wMy0xMixTYWxhcnkgZGVwb3NpdCw3LENlbnRyYWwgQnJhbmNoLDUwMDANCjEwMjEsMTE4LERFUE9TSVQsMTUwMDAsMjAyNC0wMy0xNSxCdXNpbmVzcyByZXZlbnVlLDcsQ2VudHJhbCBCcmFuY2gsMTUwMDANCjEwMjIsMTE5LFdJVEhEUkFXQUwsMzAwLDIwMjQtMDMtMTgsQVRNIHdpdGhkcmF3YWwsNyxDZW50cmFsIEJyYW5jaCwtMzAwDQoxMDIzLDEyMCxERVBPU0lULDMwMDAwLDIwMjQtMDMtMjAsSW52ZXN0bWVudCByZXR1cm4sOCxOb3J0aFdlc3QgQnJhbmNoLDMwMDAwDQoxMDI0LDEyMCxXSVRIRFJBV0FMLDUwMDAsMjAyNC0wMy0yMixIb21lIHJlbm92YXRpb24sOCxOb3J0aFdlc3QgQnJhbmNoLC01MDAwDQoxMDI1LDEyMSxUUkFOU0ZFUiwyMDAwLDIwMjQtMDMtMjUsVHJhbnNmZXIgdG8gc2F2aW5ncyw4LE5vcnRoV2VzdCBCcmFuY2gsMA0KMTAyNiwxMjIsREVQT1NJVCwzNTAwLDIwMjQtMDMtMjgsU2FsYXJ5IGRlcG9zaXQsOCxOb3J0aFdlc3QgQnJhbmNoLDM1MDANCjEwMjcsMTIzLFdJVEhEUkFXQUwsNjAwLDIwMjQtMDQtMDEsVXRpbGl0eSBiaWxsLDksSGFyYm9yIEJyYW5jaCwtNjAwDQoxMDI4LDEyNCxERVBPU0lULDEwMDAwLDIwMjQtMDQtMDMsU2FsYXJ5IGRlcG9zaXQsOSxIYXJib3IgQnJhbmNoLDEwMDAwDQoxMDI5LDEyNSxXSVRIRFJBV0FMLDEyMDAsMjAyNC0wNC0wNSxSZW50IHBheW1lbnQsOSxIYXJib3IgQnJhbmNoLC0xMjAwDQoxMDMwLDEyNixERVBPU0lULDQwMDAsMjAyNC0wNC0wOCxTYWxhcnkgZGVwb3NpdCwxMCxMYWtlc2lkZSBCcmFuY2gsNDAwMA0KMTAzMSwxMjcsVFJBTlNGRVIsMTUwMCwyMDI0LTA0LTEwLFRyYW5zZmVyIHRvIGNoZWNraW5nLDEwLExha2VzaWRlIEJyYW5jaCwwDQoxMDMyLDEyOCxXSVRIRFJBV0FMLDQwMCwyMDI0LTA0LTEyLEFUTSB3aXRoZHJhd2FsLDEwLExha2VzaWRlIEJyYW5jaCwtNDAwDQoxMDMzLDEyOSxERVBPU0lULDUwMDAwLDIwMjQtMDQtMTUsSW52ZXN0bWVudCByZXR1cm4sMTEsQmF5IEJyYW5jaCw1MDAwMA0KMTAzNCwxMjksV0lUSERSQVdBTCw4MDAwLDIwMjQtMDQtMTgsVGF4IHBheW1lbnQsMTEsQmF5IEJyYW5jaCwtODAwMA0KMTAzNSwxMzAsVFJBTlNGRVIsNTAwMCwyMDI0LTA0LTIwLFRyYW5zZmVyIHRvIHNhdmluZ3MsMTEsQmF5IEJyYW5jaCwwDQoxMDM2LDEzMSxERVBPU0lULDYwMDAsMjAyNC0wNC0yMixTYWxhcnkgZGVwb3NpdCwxMSxCYXkgQnJhbmNoLDYwMDANCjEwMzcsMTMyLFdJVEhEUkFXQUwsNzAwLDIwMjQtMDQtMjUsR3JvY2VyeSBzaG9wcGluZywxMixSaXZlcnNpZGUgQnJhbmNoLC03MDANCjEwMzgsMTMzLERFUE9TSVQsOTAwMCwyMDI0LTA0LTI4LEJvbnVzLDEyLFJpdmVyc2lkZSBCcmFuY2gsOTAwMA0KMTAzOSwxMzQsV0lUSERSQVdBTCw1MDAsMjAyNC0wNS0wMSxVdGlsaXR5IGJpbGwsMTIsUml2ZXJzaWRlIEJyYW5jaCwtNTAwDQoxMDQwLDEzNSxERVBPU0lULDcwMDAsMjAyNC0wNS0wMyxTYWxhcnkgZGVwb3NpdCwxMyxNZXRybyBCcmFuY2gsNzAwMA0KMTA0MSwxMzYsVFJBTlNGRVIsMzAwMCwyMDI0LTA1LTA1LFRyYW5zZmVyIHRvIGNoZWNraW5nLDEzLE1ldHJvIEJyYW5jaCwwDQoxMDQyLDEzNyxXSVRIRFJBV0FMLDIwMCwyMDI0LTA1LTA4LEFUTSB3aXRoZHJhd2FsLDEzLE1ldHJvIEJyYW5jaCwtMjAwDQoxMDQzLDEzOCxERVBPU0lULDIwMDAwLDIwMjQtMDUtMTAsQnVzaW5lc3MgcmV2ZW51ZSwxNCxNaWR0b3duIEJyYW5jaCwyMDAwMA0KMTA0NCwxMzgsV0lUSERSQVdBTCw0MDAwLDIwMjQtMDUtMTIsRXF1aXBtZW50IHB1cmNoYXNlLDE0LE1pZHRvd24gQnJhbmNoLC00MDAwDQoxMDQ1LDEzOSxERVBPU0lULDg1MDAsMjAyNC0wNS0xNSxTYWxhcnkgZGVwb3NpdCwxNCxNaWR0b3duIEJyYW5jaCw4NTAwDQoxMDQ2LDE0MCxXSVRIRFJBV0FMLDEwMDAsMjAyNC0wNS0xOCxDYXIgcGF5bWVudCwxNCxNaWR0b3duIEJyYW5jaCwtMTAwMA0KMTA0NywxNDEsREVQT1NJVCw1NTAwLDIwMjQtMDUtMjAsU2FsYXJ5IGRlcG9zaXQsMTUsR2FyZGVuIEJyYW5jaCw1NTAwDQoxMDQ4LDE0MixUUkFOU0ZFUiwyNTAwLDIwMjQtMDUtMjIsVHJhbnNmZXIgdG8gY2hlY2tpbmcsMTUsR2FyZGVuIEJyYW5jaCwwDQoxMDQ5LDE0MyxXSVRIRFJBV0FMLDMwMCwyMDI0LTA1LTI1LEFUTSB3aXRoZHJhd2FsLDE1LEdhcmRlbiBCcmFuY2gsLTMwMA0KMTA1MCwxNDQsREVQT1NJVCw3NTAwLDIwMjQtMDUtMjgsU2FsYXJ5IGRlcG9zaXQsNixTb3V0aCBCcmFuY2gsNzUwMA0KMTA1MSwxNDUsV0lUSERSQVdBTCwyMDAwLDIwMjQtMDYtMDEsUmVudCBwYXltZW50LDYsU291dGggQnJhbmNoLC0yMDAwDQoxMDUyLDE0NixERVBPU0lULDY1MDAsMjAyNC0wNi0wMyxTYWxhcnkgZGVwb3NpdCw3LENlbnRyYWwgQnJhbmNoLDY1MDANCjEwNTMsMTQ3LFdJVEhEUkFXQUwsNDUwLDIwMjQtMDYtMDUsR3JvY2VyeSBzaG9wcGluZyw4LE5vcnRoV2VzdCBCcmFuY2gsLTQ1MA0KMTA1NCwxNDgsREVQT1NJVCwyNTAwMCwyMDI0LTA2LTA4LEludmVzdG1lbnQgcmV0dXJuLDksSGFyYm9yIEJyYW5jaCwyNTAwMA0KMTA1NSwxNDgsV0lUSERSQVdBTCw1MDAwLDIwMjQtMDYtMTAsSG9tZSByZW5vdmF0aW9uLDksSGFyYm9yIEJyYW5jaCwtNTAwMA0KMTA1NiwxNDksREVQT1NJVCwzMDAwLDIwMjQtMDYtMTIsU2FsYXJ5IGRlcG9zaXQsMTAsTGFrZXNpZGUgQnJhbmNoLDMwMDANCjEwNTcsMTUwLFRSQU5TRkVSLDQwMDAsMjAyNC0wNi0xNSxUcmFuc2ZlciB0byBjaGVja2luZywxMSxCYXkgQnJhbmNoLDANCjEwNTgsMTUxLFdJVEhEUkFXQUwsNjAwLDIwMjQtMDYtMTgsVXRpbGl0eSBiaWxsLDExLEJheSBCcmFuY2gsLTYwMA0KMTA1OSwxNTIsREVQT1NJVCwxODAwMCwyMDI0LTA2LTIwLFNhbGFyeSBkZXBvc2l0LDEyLFJpdmVyc2lkZSBCcmFuY2gsMTgwMDANCjEwNjAsMTUzLFdJVEhEUkFXQUwsODAwLDIwMjQtMDYtMjIsQVRNIHdpdGhkcmF3YWwsMTMsTWV0cm8gQnJhbmNoLC04MDANCjEwNjEsMTU0LERFUE9TSVQsOTUwMCwyMDI0LTA2LTI1LEJ1c2luZXNzIHJldmVudWUsMTQsTWlkdG93biBCcmFuY2gsOTUwMA0KMTA2MiwxNTUsV0lUSERSQVdBTCwzNTAsMjAyNC0wNi0yOCxHcm9jZXJ5IHNob3BwaW5nLDE1LEdhcmRlbiBCcmFuY2gsLTM1MA0KMTA2MywxNTYsREVQT1NJVCw1MDAwLDIwMjQtMDctMDEsU2FsYXJ5IGRlcG9zaXQsMSxNYWluIEJyYW5jaCw1MDAwDQoxMDY0LDE1NyxUUkFOU0ZFUiwxMDAwLDIwMjQtMDctMDMsVHJhbnNmZXIgdG8gc2F2aW5ncywyLERvd250b3duIEJyYW5jaCwwDQoxMDY1LDE1OCxERVBPU0lULDcwMDAsMjAyNC0wNy0wNSxTYWxhcnkgZGVwb3NpdCwzLFdlc3QgQnJhbmNoLDcwMDANCjEwNjYsMTY5LERFUE9TSVQsNjAwMCwyMDI0LTA3LTA4LFNhbGFyeSBkZXBvc2l0LDMwLFN0cmlwIEJyYW5jaCw2MDAwDQoxMDY3LDE2OSxXSVRIRFJBV0FMLDEwMDAsMjAyNC0wNy0xMixSZW50IHBheW1lbnQsMzAsU3RyaXAgQnJhbmNoLC0xMDAwDQoxMDY4LDE3MCxERVBPU0lULDI1MDAsMjAyNC0wNy0xNSxCb251cywzMCxTdHJpcCBCcmFuY2gsMjUwMA0KMTA2OSwxNzEsV0lUSERSQVdBTCw3MDAsMjAyNC0wNy0xOCxHcm9jZXJ5IHNob3BwaW5nLDMxLEJyb2Fkd2F5IEJyYW5jaCwtNzAwDQoxMDcwLDE3MixERVBPU0lULDQ1MDAsMjAyNC0wNy0yMCxTYWxhcnkgZGVwb3NpdCwzMixTaXh0aCBTdHJlZXQgQnJhbmNoLDQ1MDANCjEwNzEsMTczLERFUE9TSVQsMjUwMDAsMjAyNC0wNy0yMixCdXNpbmVzcyByZXZlbnVlLDMyLFNpeHRoIFN0cmVldCBCcmFuY2gsMjUwMDANCjEwNzIsMTc0LFdJVEhEUkFXQUwsNDAwLDIwMjQtMDctMjUsQVRNIHdpdGhkcmF3YWwsMzMsR2FzbGFtcCBCcmFuY2gsLTQwMA0KMTA3MywxNzUsREVQT1NJVCwzMjAwLDIwMjQtMDctMjgsU2FsYXJ5IGRlcG9zaXQsMzQsTWlkdG93biBCcmFuY2gsMzIwMA0KMTA3NCwxNzYsVFJBTlNGRVIsMjAwMCwyMDI0LTA3LTMwLFRyYW5zZmVyIHRvIGNoZWNraW5nLDM0LE1pZHRvd24gQnJhbmNoLDANCjEwNzUsMTc3LERFUE9TSVQsMTIwMDAsMjAyNC0wOC0wMSxJbnZlc3RtZW50IHJldHVybiwzNSxVcHRvd24gQnJhbmNoLDEyMDAwDQoxMDc2LDE3OCxXSVRIRFJBV0FMLDUwMCwyMDI0LTA4LTAzLFV0aWxpdHkgYmlsbCwzNixHYXRld2F5IEJyYW5jaCwtNTAwDQoxMDc3LDE3OSxERVBPU0lULDU1MDAsMjAyNC0wOC0wNSxTYWxhcnkgZGVwb3NpdCwzNyxJbm5lciBIYXJib3IgQnJhbmNoLDU1MDANCjEwNzgsMTgwLFRSQU5TRkVSLDE1MDAsMjAyNC0wOC0wOCxUcmFuc2ZlciB0byBzYXZpbmdzLDM4LFJlc2VhcmNoIEJyYW5jaCwwDQoxMDc5LDE4MSxERVBPU0lULDgwMDAsMjAyNC0wOC0xMCxCdXNpbmVzcyByZXZlbnVlLDM4LFJlc2VhcmNoIEJyYW5jaCw4MDAwDQoxMDgwLDE4MixXSVRIRFJBV0FMLDMwMCwyMDI0LTA4LTEyLEFUTSB3aXRoZHJhd2FsLDM5LFVwdG93biBCcmFuY2gsLTMwMA0K\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"TransactionID\", Int64.Type}, {\"AccountID\", Int64.Type}, {\"TransType\", type text}, {\"Amount\", type number}, {\"TransDate\", type date}, {\"Description\", type text}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}, {\"SignedAmount\", type number}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Loans",
+        "columns": [
+          {
+            "name": "LoanID",
+            "dataType": "int64",
+            "lineageTag": "ced16436-3880-4abf-bad9-1c1bf27a2466",
+            "sourceColumn": "LoanID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CustomerID",
+            "dataType": "int64",
+            "lineageTag": "13100767-be96-4c73-b2ae-ab7b12c213f5",
+            "sourceColumn": "CustomerID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LoanType",
+            "dataType": "string",
+            "lineageTag": "168a5267-3fe4-4dea-871d-e0be93e1d059",
+            "sourceColumn": "LoanType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Amount",
+            "dataType": "double",
+            "lineageTag": "71348601-f1e0-4901-b4b1-9aec442cff28",
+            "sourceColumn": "Amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "InterestRate",
+            "dataType": "double",
+            "lineageTag": "8630e7d2-0c4c-491a-a81f-8127cc4c0ea2",
+            "sourceColumn": "InterestRate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StartDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "b7bcb489-9e1d-4d59-ba94-82472997b428",
+            "sourceColumn": "StartDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EndDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "48010a51-3899-4a91-9057-a3090e1c5878",
+            "sourceColumn": "EndDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "3329d6a7-545b-4b62-84a4-ec824221c4aa",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "fbfb8853-f139-4957-ae17-e86644bab709",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "88b31569-9fd7-4d00-81ca-fb1b052d3790",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d273d1c5-975d-448e-bab1-e52dcc5aea69",
+        "partitions": [
+          {
+            "name": "Loans",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"TG9hbklELEN1c3RvbWVySUQsTG9hblR5cGUsQW1vdW50LEludGVyZXN0UmF0ZSxTdGFydERhdGUsRW5kRGF0ZSxTdGF0dXMsQnJhbmNoSUQsQnJhbmNoTmFtZQ0KMjAxLDEsSE9NRSwyMDAwMDAsMy41LDIwMjAtMDItMDEsMjA1MC0wMi0wMSxBQ1RJVkUsMSxNYWluIEJyYW5jaA0KMjAyLDIsQ0FSLDE1MDAwLDUuMiwyMDIxLTA2LTE1LDIwMjYtMDYtMTUsQUNUSVZFLDIsRG93bnRvd24gQnJhbmNoDQoyMDMsMyxQRVJTT05BTCw1MDAwLDcuOCwyMDIyLTAxLTEwLDIwMjUtMDEtMTAsQUNUSVZFLDMsV2VzdCBCcmFuY2gNCjIwNCw0LEJVU0lORVNTLDgwMDAwLDQuMSwyMDE5LTAzLTIwLDIwMjktMDMtMjAsQUNUSVZFLDQsTm9ydGggQnJhbmNoDQoyMDUsNSxDQVIsMTIwMDAsNiwyMDIyLTA1LTAxLDIwMjctMDUtMDEsQUNUSVZFLDUsRWFzdCBCcmFuY2gNCjIwNiw2LFBFUlNPTkFMLDMwMDAsOC41LDIwMjEtMTEtMzAsMjAyNC0xMS0zMCxQQUlELDEsTWFpbiBCcmFuY2gNCjIwNyw4LEhPTUUsMTUwMDAwLDMuNzUsMjAyMC0wNy0xNSwyMDQ1LTA3LTE1LEFDVElWRSw0LE5vcnRoIEJyYW5jaA0KMjA4LDEwLEJVU0lORVNTLDEwMDAwMCwzLjksMjAxOC0wOS0wMSwyMDI4LTA5LTAxLEFDVElWRSwyLERvd250b3duIEJyYW5jaA0KMjA5LDExLEhPTUUsMTgwMDAwLDMuNiwyMDIxLTA0LTAxLDIwNTEtMDQtMDEsQUNUSVZFLDYsU291dGggQnJhbmNoDQoyMTAsMTIsQ0FSLDIwMDAwLDUuNSwyMDIxLTA5LTAxLDIwMjYtMDktMDEsQUNUSVZFLDYsU291dGggQnJhbmNoDQoyMTEsMTMsQlVTSU5FU1MsMTIwMDAwLDQuMiwyMDIwLTAxLTE1LDIwMzAtMDEtMTUsQUNUSVZFLDcsQ2VudHJhbCBCcmFuY2gNCjIxMiwxNCxQRVJTT05BTCw4MDAwLDgsMjAyMi0wMi0wMSwyMDI1LTAyLTAxLEFDVElWRSw3LENlbnRyYWwgQnJhbmNoDQoyMTMsMTUsSE9NRSwzNTAwMDAsMy4yNSwyMDE4LTA3LTAxLDIwNDgtMDctMDEsQUNUSVZFLDgsTm9ydGhXZXN0IEJyYW5jaA0KMjE0LDE2LENBUiwxNTAwMCw1LjgsMjAyMi0wMS0xNSwyMDI3LTAxLTE1LEFDVElWRSw4LE5vcnRoV2VzdCBCcmFuY2gNCjIxNSwxNyxQRVJTT05BTCwxMDAwMCw3LjUsMjAyMC0wNS0wMSwyMDIzLTA1LTAxLFBBSUQsOSxIYXJib3IgQnJhbmNoDQoyMTYsMTgsSE9NRSwyMjAwMDAsMy40NSwyMDE5LTA4LTAxLDIwNDktMDgtMDEsQUNUSVZFLDksSGFyYm9yIEJyYW5jaA0KMjE3LDE5LENBUiwxODAwMCw2LjIsMjAyMi0xMC0wMSwyMDI3LTEwLTAxLEFDVElWRSwxMCxMYWtlc2lkZSBCcmFuY2gNCjIxOCwyMCxQRVJTT05BTCw1MDAwLDguNSwyMDIxLTA2LTAxLDIwMjQtMDYtMDEsUEFJRCwxMCxMYWtlc2lkZSBCcmFuY2gNCjIxOSwyMSxCVVNJTkVTUyw1MDAwMDAsMy44LDIwMTgtMDQtMDEsMjAyOC0wNC0wMSxBQ1RJVkUsMTEsQmF5IEJyYW5jaA0KMjIwLDIyLEhPTUUsMjgwMDAwLDMuNTUsMjAyMC0xMS0wMSwyMDUwLTExLTAxLEFDVElWRSwxMSxCYXkgQnJhbmNoDQoyMjEsMjMsQ0FSLDIyMDAwLDUuOSwyMDE5LTAzLTAxLDIwMjQtMDMtMDEsUEFJRCwxMixSaXZlcnNpZGUgQnJhbmNoDQoyMjIsMjQsUEVSU09OQUwsNzAwMCw3LjksMjAyMS0wOS0wMSwyMDI0LTA5LTAxLEFDVElWRSwxMixSaXZlcnNpZGUgQnJhbmNoDQoyMjMsMjUsSE9NRSwxOTUwMDAsMy43LDIwMjAtMDctMDEsMjA1MC0wNy0wMSxBQ1RJVkUsMTMsTWV0cm8gQnJhbmNoDQoyMjQsMjYsQ0FSLDEyMDAwLDYuMSwyMDIyLTA0LTAxLDIwMjctMDQtMDEsQUNUSVZFLDEzLE1ldHJvIEJyYW5jaA0KMjI1LDI3LEJVU0lORVNTLDMwMDAwMCwzLjk1LDIwMTktMTAtMDEsMjAyOS0xMC0wMSxBQ1RJVkUsMTQsTWlkdG93biBCcmFuY2gNCjIyNiwyOCxIT01FLDE2MDAwMCwzLjY1LDIwMjEtMDItMDEsMjA1MS0wMi0wMSxBQ1RJVkUsMTQsTWlkdG93biBCcmFuY2gNCjIyNywyOSxQRVJTT05BTCw2MDAwLDguMiwyMDIwLTA4LTAxLDIwMjMtMDgtMDEsUEFJRCwxNSxHYXJkZW4gQnJhbmNoDQoyMjgsMzAsQ0FSLDE0MDAwLDUuNywyMDIyLTEyLTAxLDIwMjctMTItMDEsQUNUSVZFLDE1LEdhcmRlbiBCcmFuY2gNCjIyOSwzMSxIT01FLDI0MDAwMCwzLjQsMjAxOS0wMS0wMSwyMDQ5LTAxLTAxLEFDVElWRSw2LFNvdXRoIEJyYW5jaA0KMjMwLDMyLFBFUlNPTkFMLDkwMDAsNy42LDIwMjAtMDQtMDEsMjAyMy0wNC0wMSxQQUlELDcsQ2VudHJhbCBCcmFuY2gNCjIzMSwzMyxDQVIsMTYwMDAsNS45NSwyMDIxLTA3LTAxLDIwMjYtMDctMDEsQUNUSVZFLDgsTm9ydGhXZXN0IEJyYW5jaA0KMjMyLDM0LEJVU0lORVNTLDQwMDAwMCwzLjg1LDIwMTktMTEtMDEsMjAyOS0xMS0wMSxBQ1RJVkUsOSxIYXJib3IgQnJhbmNoDQoyMzMsMzUsUEVSU09OQUwsNDAwMCw4LjgsMjAyMi0wNS0wMSwyMDI1LTA1LTAxLEFDVElWRSwxMCxMYWtlc2lkZSBCcmFuY2gNCjIzNCwzNixIT01FLDMxMDAwMCwzLjMsMjAyMC0xMC0wMSwyMDUwLTEwLTAxLEFDVElWRSwxMSxCYXkgQnJhbmNoDQoyMzUsMzcsQ0FSLDI1MDAwLDUuNCwyMDE4LTA5LTAxLDIwMjMtMDktMDEsUEFJRCwxMixSaXZlcnNpZGUgQnJhbmNoDQoyMzYsMzgsUEVSU09OQUwsMzUwMCw5LDIwMjEtMDMtMDEsMjAyNC0wMy0wMSxBQ1RJVkUsMTMsTWV0cm8gQnJhbmNoDQoyMzcsMzksSE9NRSwxNzUwMDAsMy43NSwyMDIwLTA2LTAxLDIwNTAtMDYtMDEsQUNUSVZFLDE0LE1pZHRvd24gQnJhbmNoDQoyMzgsNDAsQ0FSLDExMDAwLDYuMywyMDIyLTA5LTAxLDIwMjctMDktMDEsQUNUSVZFLDE1LEdhcmRlbiBCcmFuY2gNCjIzOSw0MSxIT01FLDIxMDAwMCwzLjU1LDIwMTktMDItMDEsMjA0OS0wMi0wMSxBQ1RJVkUsMSxNYWluIEJyYW5jaA0KMjQwLDQyLFBFUlNPTkFMLDU1MDAsOC4zLDIwMjEtMDgtMDEsMjAyNC0wOC0wMSxBQ1RJVkUsMixEb3dudG93biBCcmFuY2gNCjI0MSw0MyxDQVIsMTkwMDAsNS42NSwyMDIwLTEyLTAxLDIwMjUtMTItMDEsQUNUSVZFLDMsV2VzdCBCcmFuY2gNCjI0Miw0NCxCVVNJTkVTUywyNTAwMDAsNCwyMDE4LTA2LTAxLDIwMjgtMDYtMDEsQUNUSVZFLDQsTm9ydGggQnJhbmNoDQoyNDMsNDUsUEVSU09OQUwsNzUwMCw3LjgsMjAyMi0wNy0wMSwyMDI1LTA3LTAxLEFDVElWRSw1LEVhc3QgQnJhbmNoDQoyNDQsNDYsSE9NRSwxOTUwMDAsMy42LDIwMTktMDUtMDEsMjA0OS0wNS0wMSxBQ1RJVkUsNixTb3V0aCBCcmFuY2gNCjI0NSw0NyxDQVIsMTMwMDAsNS44NSwyMDIxLTExLTAxLDIwMjYtMTEtMDEsQUNUSVZFLDcsQ2VudHJhbCBCcmFuY2gNCjI0Niw0OCxQRVJTT05BTCw2NTAwLDguMSwyMDIwLTAzLTAxLDIwMjMtMDMtMDEsUEFJRCw4LE5vcnRoV2VzdCBCcmFuY2gNCjI0Nyw0OSxIT01FLDE0NTAwMCwzLjgsMjAyMi0wOC0wMSwyMDUyLTA4LTAxLEFDVElWRSw5LEhhcmJvciBCcmFuY2gNCjI0OCw1MCxDQVIsMTcwMDAsNS43NSwyMDIxLTA0LTAxLDIwMjYtMDQtMDEsQUNUSVZFLDEwLExha2VzaWRlIEJyYW5jaA0KMjQ5LDUxLEhPTUUsMjI1MDAwLDMuNTUsMjAyMS0wNi0wMSwyMDUxLTA2LTAxLEFDVElWRSwzMCxTdHJpcCBCcmFuY2gNCjI1MCw1MixDQVIsMTYwMDAsNS42NSwyMDIxLTEwLTAxLDIwMjYtMTAtMDEsQUNUSVZFLDMxLEJyb2Fkd2F5IEJyYW5jaA0KMjUxLDUzLEJVU0lORVNTLDM1MDAwMCwzLjksMjAxOS0wNS0wMSwyMDI5LTA1LTAxLEFDVElWRSwzMixTaXh0aCBTdHJlZXQgQnJhbmNoDQoyNTIsNTQsUEVSU09OQUwsNDUwMCw4LjIsMjAyMi0wMy0wMSwyMDI1LTAzLTAxLEFDVElWRSwzMyxHYXNsYW1wIEJyYW5jaA0KMjUzLDU1LENBUiwxODUwMCw1Ljc1LDIwMjEtMDktMDEsMjAyNi0wOS0wMSxBQ1RJVkUsMzQsTWlkdG93biBCcmFuY2gNCjI1NCw1NixIT01FLDI4MDAwMCwzLjQsMjAyMC0xMi0wMSwyMDUwLTEyLTAxLEFDVElWRSwzNSxVcHRvd24gQnJhbmNoDQoyNTUsNTcsQlVTSU5FU1MsMTgwMDAwLDQuMDUsMjAxOC0wOC0wMSwyMDI4LTA4LTAxLEFDVElWRSwzNixHYXRld2F5IEJyYW5jaA0KMjU2LDU4LFBFUlNPTkFMLDYwMDAsOC41LDIwMjItMDUtMDEsMjAyNS0wNS0wMSxBQ1RJVkUsMzcsSW5uZXIgSGFyYm9yIEJyYW5jaA0KMjU3LDU5LEhPTUUsMTk1MDAwLDMuNjUsMjAxOS0xMS0wMSwyMDQ5LTExLTAxLEFDVElWRSwzOCxSZXNlYXJjaCBCcmFuY2gNCjI1OCw2MCxDQVIsMTQ1MDAsNS45LDIwMjEtMTItMDEsMjAyNi0xMi0wMSxBQ1RJVkUsMzksVXB0b3duIEJyYW5jaA0KMjU5LDcsQ0FSLDEyMDAwLDYuMSwyMDIzLTAxLTAxLDIwMjgtMDEtMDEsQUNUSVZFLDMsV2VzdCBCcmFuY2gNCjI2MCw5LFBFUlNPTkFMLDM1MDAsOC43LDIwMjMtMDItMDEsMjAyNi0wMi0wMSxBQ1RJVkUsNSxFYXN0IEJyYW5jaA0K\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"LoanID\", Int64.Type}, {\"CustomerID\", Int64.Type}, {\"LoanType\", type text}, {\"Amount\", type number}, {\"InterestRate\", type number}, {\"StartDate\", type date}, {\"EndDate\", type date}, {\"Status\", type text}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Employees",
+        "columns": [
+          {
+            "name": "EmployeeID",
+            "dataType": "int64",
+            "lineageTag": "80ad28c8-2160-4c00-a085-5986e230fa11",
+            "sourceColumn": "EmployeeID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "lineageTag": "9abf778e-2c6f-4b81-ace6-ca3392d0d253",
+            "sourceColumn": "FirstName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "lineageTag": "3fe3d9da-d30f-465f-989c-b960b564ff72",
+            "sourceColumn": "LastName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EmployeeName",
+            "dataType": "string",
+            "lineageTag": "8b65d2a9-03f8-4b6e-84a2-f88d6909312e",
+            "sourceColumn": "EmployeeName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "JobTitle",
+            "dataType": "string",
+            "lineageTag": "850216dc-6ab4-458d-ab64-59217e39c153",
+            "sourceColumn": "JobTitle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Salary",
+            "dataType": "double",
+            "lineageTag": "dc7b3c8d-29fd-47bd-837e-377afeb624d7",
+            "sourceColumn": "Salary",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "43b341aa-6fcd-46d6-b79f-9fc3e33c016f",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "3a83e2c0-17f9-4731-81a2-271a130dcb63",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HireDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "bd27eaf8-529f-4a6e-b5b5-070785b3cdda",
+            "sourceColumn": "HireDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ManagerID",
+            "dataType": "int64",
+            "lineageTag": "300d3e95-5d67-49cc-8ba8-a3d805bb2a7f",
+            "sourceColumn": "ManagerID",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0dcf1f87-8edf-4627-987a-e9cf39989c77",
+        "partitions": [
+          {
+            "name": "Employees",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"RW1wbG95ZWVJRCxGaXJzdE5hbWUsTGFzdE5hbWUsRW1wbG95ZWVOYW1lLEpvYlRpdGxlLFNhbGFyeSxCcmFuY2hJRCxCcmFuY2hOYW1lLEhpcmVEYXRlLE1hbmFnZXJJRA0KMzAxLFNhcmFoLENvbm5vcixTYXJhaCBDb25ub3IsQnJhbmNoIE1hbmFnZXIsODUwMDAsMSxNYWluIEJyYW5jaCwyMDE1LTAzLTEwLA0KMzAyLFRvbSxIYXJyaXMsVG9tIEhhcnJpcyxCcmFuY2ggTWFuYWdlciw4MDAwMCwyLERvd250b3duIEJyYW5jaCwyMDE2LTA3LTAxLA0KMzAzLExpbmRhLFdoaXRlLExpbmRhIFdoaXRlLEJyYW5jaCBNYW5hZ2VyLDc4MDAwLDMsV2VzdCBCcmFuY2gsMjAxNy0wMS0xNSwNCjMwNCxNYXJrLEV2YW5zLE1hcmsgRXZhbnMsQnJhbmNoIE1hbmFnZXIsODIwMDAsNCxOb3J0aCBCcmFuY2gsMjAxNC0wOS0yMCwNCjMwNSxOYW5jeSxDbGFyayxOYW5jeSBDbGFyayxCcmFuY2ggTWFuYWdlciw3OTAwMCw1LEVhc3QgQnJhbmNoLDIwMTYtMTEtMDUsDQozMDYsUGF1bCxXYWxrZXIsUGF1bCBXYWxrZXIsTG9hbiBPZmZpY2VyLDU1MDAwLDEsTWFpbiBCcmFuY2gsMjAxOC0wMi0yOCwzMDENCjMwNyxRdWlubixBZGFtcyxRdWlubiBBZGFtcyxUZWxsZXIsMzgwMDAsMSxNYWluIEJyYW5jaCwyMDIwLTA2LTEwLDMwMQ0KMzA4LFJhY2hlbCxCcm93bixSYWNoZWwgQnJvd24sVGVsbGVyLDM3MDAwLDIsRG93bnRvd24gQnJhbmNoLDIwMjEtMDMtMTUsMzAyDQozMDksU3RldmUsWW91bmcsU3RldmUgWW91bmcsTG9hbiBPZmZpY2VyLDU0MDAwLDMsV2VzdCBCcmFuY2gsMjAxOS0wOC0yMiwzMDMNCjMxMCxUaW5hLFNjb3R0LFRpbmEgU2NvdHQsVGVsbGVyLDM2MDAwLDQsTm9ydGggQnJhbmNoLDIwMjItMDEtMTAsMzA0DQozMTEsVW1hLEphbWVzLFVtYSBKYW1lcyxCcmFuY2ggTWFuYWdlciw4MzAwMCw2LFNvdXRoIEJyYW5jaCwyMDE1LTA2LTAxLA0KMzEyLFZpY3RvcixIdWdoZXMsVmljdG9yIEh1Z2hlcyxCcmFuY2ggTWFuYWdlciw4MTAwMCw3LENlbnRyYWwgQnJhbmNoLDIwMTYtMDMtMTUsDQozMTMsV2VuZHksRm9zdGVyLFdlbmR5IEZvc3RlcixCcmFuY2ggTWFuYWdlciw3OTAwMCw4LE5vcnRoV2VzdCBCcmFuY2gsMjAxNy0wOS0wMSwNCjMxNCxYYXZpZXIsUHJpY2UsWGF2aWVyIFByaWNlLEJyYW5jaCBNYW5hZ2VyLDg0MDAwLDksSGFyYm9yIEJyYW5jaCwyMDE0LTExLTIwLA0KMzE1LFl2b25uZSxEaWF6LFl2b25uZSBEaWF6LEJyYW5jaCBNYW5hZ2VyLDgwMDAwLDEwLExha2VzaWRlIEJyYW5jaCwyMDE2LTA3LTEwLA0KMzE2LFphY2gsUnVzc2VsbCxaYWNoIFJ1c3NlbGwsQnJhbmNoIE1hbmFnZXIsODYwMDAsMTEsQmF5IEJyYW5jaCwyMDE1LTAxLTA1LA0KMzE3LEFteSxHcmlmZmluLEFteSBHcmlmZmluLEJyYW5jaCBNYW5hZ2VyLDc4MDAwLDEyLFJpdmVyc2lkZSBCcmFuY2gsMjAxNy0wNC0yMCwNCjMxOCxCcmlhbixIYXllcyxCcmlhbiBIYXllcyxCcmFuY2ggTWFuYWdlciw4MjAwMCwxMyxNZXRybyBCcmFuY2gsMjAxNC0wOC0xNSwNCjMxOSxDYXRoeSxNeWVycyxDYXRoeSBNeWVycyxCcmFuY2ggTWFuYWdlciw3NzAwMCwxNCxNaWR0b3duIEJyYW5jaCwyMDE4LTAyLTAxLA0KMzIwLERlcmVrLEZvcmQsRGVyZWsgRm9yZCxCcmFuY2ggTWFuYWdlciw4MDAwMCwxNSxHYXJkZW4gQnJhbmNoLDIwMTYtMTAtMTAsDQozMjEsRWxsZW4sSGFtaWx0b24sRWxsZW4gSGFtaWx0b24sTG9hbiBPZmZpY2VyLDU2MDAwLDIsRG93bnRvd24gQnJhbmNoLDIwMTgtMDUtMTUsMzAyDQozMjIsRnJlZCxHcmFoYW0sRnJlZCBHcmFoYW0sVGVsbGVyLDM3NTAwLDMsV2VzdCBCcmFuY2gsMjAyMS0wMS0yMCwzMDMNCjMyMyxHaW5hLFN1bGxpdmFuLEdpbmEgU3VsbGl2YW4sTG9hbiBPZmZpY2VyLDU1MDAwLDQsTm9ydGggQnJhbmNoLDIwMTktMDYtMTAsMzA0DQozMjQsSGFycnksV2FsbGFjZSxIYXJyeSBXYWxsYWNlLFRlbGxlciwzNjUwMCw1LEVhc3QgQnJhbmNoLDIwMjItMDMtMDUsMzA1DQozMjUsSXJpcyxXb29kcyxJcmlzIFdvb2RzLExvYW4gT2ZmaWNlciw1NDUwMCw2LFNvdXRoIEJyYW5jaCwyMDIwLTA5LTAxLDMxMQ0KMzI2LEtldmluLEJyb29rcyxLZXZpbiBCcm9va3MsQnJhbmNoIE1hbmFnZXIsODEwMDAsMTYsRWFzdCBTaWRlIEJyYW5jaCwyMDE1LTA4LTAxLA0KMzI3LExhdXJhLEplbmtpbnMsTGF1cmEgSmVua2lucyxCcmFuY2ggTWFuYWdlciw3OTAwMCwxNyxTdW5zZXQgQnJhbmNoLDIwMTYtMDQtMTUsDQozMjgsTWFyY3VzLFBlcnJ5LE1hcmN1cyBQZXJyeSxCcmFuY2ggTWFuYWdlciw4MzAwMCwxOCxNaWR3YXkgQnJhbmNoLDIwMTctMDctMDEsDQozMjksTmluYSxDb29wZXIsTmluYSBDb29wZXIsQnJhbmNoIE1hbmFnZXIsODAwMDAsMTksUml2ZXIgT2FrcyBCcmFuY2gsMjAxNC0xMi0xMCwNCjMzMCxPc2NhcixSZWVkLE9zY2FyIFJlZWQsQnJhbmNoIE1hbmFnZXIsODIwMDAsMjAsQ29jb251dCBHcm92ZSBCcmFuY2gsMjAxNi0wOS0yMCwNCjMzMSxQYXRyaWNpYSxCZWxsLFBhdHJpY2lhIEJlbGwsQnJhbmNoIE1hbmFnZXIsODQwMDAsMjEsVXB0b3duIEJyYW5jaCwyMDE1LTAzLTAxLA0KMzMyLFF1aW5jeSxDb3gsUXVpbmN5IENveCxCcmFuY2ggTWFuYWdlciw3ODAwMCwyMixDYXBpdG9sIEhpbGwgQnJhbmNoLDIwMTctMTEtMTUsDQozMzMsUmViZWNjYSxXYXJkLFJlYmVjY2EgV2FyZCxCcmFuY2ggTWFuYWdlciw4NTAwMCwyMyxCYWNrIEJheSBCcmFuY2gsMjAxNC0wNi0yNSwNCjMzNCxTYW11ZWwsVG9ycmVzLFNhbXVlbCBUb3JyZXMsQnJhbmNoIE1hbmFnZXIsNzkwMDAsMjQsQ2hlcnJ5IENyZWVrIEJyYW5jaCwyMDE2LTAyLTEwLA0KMzM1LFRlcmVzYSxOZ3V5ZW4sVGVyZXNhIE5ndXllbixCcmFuY2ggTWFuYWdlciw4MzAwMCwyNSxGaW5hbmNpYWwgRGlzdHJpY3QsMjAxNS0xMC0wNSwNCjMzNixVbHJpY2gsUm9zcyxVbHJpY2ggUm9zcyxMb2FuIE9mZmljZXIsNTU1MDAsNyxDZW50cmFsIEJyYW5jaCwyMDE5LTAzLTEwLDMxMg0KMzM3LFZlcmEsTW9yYWxlcyxWZXJhIE1vcmFsZXMsVGVsbGVyLDM3MDAwLDgsTm9ydGhXZXN0IEJyYW5jaCwyMDIwLTExLTA1LDMxMw0KMzM4LFdhbHRlcixLaW0sV2FsdGVyIEtpbSxMb2FuIE9mZmljZXIsNTQwMDAsOSxIYXJib3IgQnJhbmNoLDIwMTgtMDgtMjAsMzE0DQozMzksWGVuYSxDaGF2ZXosWGVuYSBDaGF2ZXosVGVsbGVyLDM2NTAwLDEwLExha2VzaWRlIEJyYW5jaCwyMDIxLTA0LTE1LDMxNQ0KMzQwLFlhbGUsTXVycGh5LFlhbGUgTXVycGh5LExvYW4gT2ZmaWNlciw1NjAwMCwxMSxCYXkgQnJhbmNoLDIwMTktMDEtMjUsMzE2DQozNDEsWmFyYSxQcmljZSxaYXJhIFByaWNlLFRlbGxlciwzNzUwMCwxMixSaXZlcnNpZGUgQnJhbmNoLDIwMjItMDItMjgsMzE3DQozNDIsQWRhbSxTYW5jaGV6LEFkYW0gU2FuY2hleixMb2FuIE9mZmljZXIsNTUwMDAsMTMsTWV0cm8gQnJhbmNoLDIwMjAtMDctMTAsMzE4DQozNDMsQmVsbGEsUmV5ZXMsQmVsbGEgUmV5ZXMsVGVsbGVyLDM2MDAwLDE0LE1pZHRvd24gQnJhbmNoLDIwMjEtMDktMDEsMzE5DQozNDQsQ2FybG9zLEdyYXksQ2FybG9zIEdyYXksTG9hbiBPZmZpY2VyLDU0NTAwLDE1LEdhcmRlbiBCcmFuY2gsMjAxOS0wNS0yMCwzMjANCjM0NSxEaWFuYSxKYW1lcyxEaWFuYSBKYW1lcyxUZWxsZXIsMzcwMDAsMTYsRWFzdCBTaWRlIEJyYW5jaCwyMDIyLTAxLTE1LDMyNg0KMzQ2LEV2YW4sV2F0c29uLEV2YW4gV2F0c29uLExvYW4gT2ZmaWNlciw1NTUwMCwxNyxTdW5zZXQgQnJhbmNoLDIwMTgtMTAtMzAsMzI3DQozNDcsRmlvbmEsQnJvb2tzLEZpb25hIEJyb29rcyxUZWxsZXIsMzY1MDAsMTgsTWlkd2F5IEJyYW5jaCwyMDIxLTA2LTIwLDMyOA0KMzQ4LEdlb3JnZSxLZWxseSxHZW9yZ2UgS2VsbHksTG9hbiBPZmZpY2VyLDU0MDAwLDE5LFJpdmVyIE9ha3MgQnJhbmNoLDIwMTktMDktMDUsMzI5DQozNDksSGVsZW4sU2FuZGVycyxIZWxlbiBTYW5kZXJzLFRlbGxlciwzNzAwMCwyMCxDb2NvbnV0IEdyb3ZlIEJyYW5jaCwyMDIwLTAzLTE1LDMzMA0KMzUwLEl2YW4sUHJpY2UsSXZhbiBQcmljZSxMb2FuIE9mZmljZXIsNTUwMDAsMjEsVXB0b3duIEJyYW5jaCwyMDE4LTEyLTAxLDMzMQ0KMzUxLEp1bGlhLEJlbm5ldHQsSnVsaWEgQmVubmV0dCxUZWxsZXIsMzc1MDAsMjIsQ2FwaXRvbCBIaWxsIEJyYW5jaCwyMDIyLTA1LTEwLDMzMg0KMzUyLEthcmwsV29vZCxLYXJsIFdvb2QsTG9hbiBPZmZpY2VyLDU0NTAwLDIzLEJhY2sgQmF5IEJyYW5jaCwyMDE5LTA3LTI1LDMzMw0KMzUzLExpc2EsQmFybmVzLExpc2EgQmFybmVzLFRlbGxlciwzNjAwMCwyNCxDaGVycnkgQ3JlZWsgQnJhbmNoLDIwMjEtMDEtMjAsMzM0DQozNTQsTWlrZSxSb3NzLE1pa2UgUm9zcyxMb2FuIE9mZmljZXIsNTUwMDAsMjUsRmluYW5jaWFsIERpc3RyaWN0LDIwMjAtMDQtMTAsMzM1DQozNTUsTmljb2xlLFR1cm5lcixOaWNvbGUgVHVybmVyLFRlbGxlciwzNzAwMCwxLE1haW4gQnJhbmNoLDIwMjItMDctMTUsMzAxDQozNTYsT2xpdmVyLEZpc2hlcixPbGl2ZXIgRmlzaGVyLExvYW4gT2ZmaWNlciw1NDUwMCwyLERvd250b3duIEJyYW5jaCwyMDE5LTExLTIwLDMwMg0KMzU3LFBhdWxhLFN0b25lLFBhdWxhIFN0b25lLFRlbGxlciwzNjUwMCwzLFdlc3QgQnJhbmNoLDIwMjEtMDgtMDUsMzAzDQozNTgsUXVlbnRpbixIb2x0LFF1ZW50aW4gSG9sdCxMb2FuIE9mZmljZXIsNTU1MDAsNCxOb3J0aCBCcmFuY2gsMjAxOC0wNi0xNSwzMDQNCjM1OSxSb3NhLEJ1cmtlLFJvc2EgQnVya2UsVGVsbGVyLDM3MDAwLDUsRWFzdCBCcmFuY2gsMjAyMi0wMy0yMCwzMDUNCjM2MCxTaW1vbixDb29rLFNpbW9uIENvb2ssTG9hbiBPZmZpY2VyLDU0MDAwLDYsU291dGggQnJhbmNoLDIwMjAtMDgtMTAsMzExDQo=\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"EmployeeID\", Int64.Type}, {\"FirstName\", type text}, {\"LastName\", type text}, {\"EmployeeName\", type text}, {\"JobTitle\", type text}, {\"Salary\", type number}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}, {\"HireDate\", type date}, {\"ManagerID\", Int64.Type}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cards",
+        "columns": [
+          {
+            "name": "CardID",
+            "dataType": "int64",
+            "lineageTag": "2f320fbc-b96a-4af4-8b8b-1445a21d9b10",
+            "sourceColumn": "CardID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AccountID",
+            "dataType": "int64",
+            "lineageTag": "6e7a92da-0635-4b18-8179-9dc96fc7701c",
+            "sourceColumn": "AccountID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CardType",
+            "dataType": "string",
+            "lineageTag": "9b70e172-6852-4b72-9b25-a7c642560e3c",
+            "sourceColumn": "CardType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CardNumber",
+            "dataType": "string",
+            "lineageTag": "5b15d78c-e6ee-438e-97a6-0028e034122e",
+            "sourceColumn": "CardNumber",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ExpiryDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "bd7f1a89-c72c-4d6e-a50f-e1991ef0c704",
+            "sourceColumn": "ExpiryDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "377122e6-0cdc-49e4-8154-5162d7d17737",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CreditLimit",
+            "dataType": "double",
+            "lineageTag": "1d4e3fa1-cf47-4302-a7d7-27cabb61b446",
+            "sourceColumn": "CreditLimit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IssuedDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2d6d956c-e378-4a06-b410-6872b5008564",
+            "sourceColumn": "IssuedDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "b4e2ec9a-b5c7-4333-96ea-58b65ccb54f3",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "34c55774-919d-48cb-820b-fb8171ee99dd",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "003731eb-91c5-41d4-a29e-8510acfc4d1b",
+        "partitions": [
+          {
+            "name": "Cards",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"Q2FyZElELEFjY291bnRJRCxDYXJkVHlwZSxDYXJkTnVtYmVyLEV4cGlyeURhdGUsU3RhdHVzLENyZWRpdExpbWl0LElzc3VlZERhdGUsQnJhbmNoSUQsQnJhbmNoTmFtZQ0KMSwxMDEsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAwMSwyMDI3LTAxLTAxLEFDVElWRSwsMjAyMi0wMS0xNSwxLE1haW4gQnJhbmNoDQoyLDEwMixDUkVESVQsWFhYWC1YWFhYLVhYWFgtMTAwMiwyMDI2LTA2LTAxLEFDVElWRSw1MDAwLDIwMjAtMDMtMDEsMSxNYWluIEJyYW5jaA0KMywxMDMsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAwMywyMDI1LTA5LTAxLEFDVElWRSwsMjAxOS0wMy0yMiwyLERvd250b3duIEJyYW5jaA0KNCwxMDQsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAwNCwyMDI2LTA3LTAxLEFDVElWRSwsMjAyMS0wNy0xMCwzLFdlc3QgQnJhbmNoDQo1LDEwNSxDUkVESVQsWFhYWC1YWFhYLVhYWFgtMTAwNSwyMDI3LTAzLTAxLEFDVElWRSwyMDAwMCwyMDE4LTExLTA1LDQsTm9ydGggQnJhbmNoDQo2LDEwNSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDA2LDIwMjYtMTEtMDEsQUNUSVZFLCwyMDE4LTExLTA1LDQsTm9ydGggQnJhbmNoDQo3LDEwNyxDUkVESVQsWFhYWC1YWFhYLVhYWFgtMTAwNywyMDI1LTEyLTAxLEFDVElWRSwxMDAwMCwyMDIwLTA2LTE0LDEsTWFpbiBCcmFuY2gNCjgsMTA4LERFQklULFhYWFgtWFhYWC1YWFhYLTEwMDgsMjAyNi0wOS0wMSxBQ1RJVkUsLDIwMjEtMDktMzAsMyxXZXN0IEJyYW5jaA0KOSwxMDksREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAwOSwyMDI0LTEyLTAxLEVYUElSRUQsLDIwMTktMTItMDEsNCxOb3J0aCBCcmFuY2gNCjEwLDEwOSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDEwLDIwMjctMTItMDEsQUNUSVZFLCwyMDIzLTEyLTAxLDQsTm9ydGggQnJhbmNoDQoxMSwxMTEsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMTEsMjAyNy0wOC0wMSxBQ1RJVkUsNTAwMDAsMjAxNy0wOC0xOCwyLERvd250b3duIEJyYW5jaA0KMTIsMTExLERFQklULFhYWFgtWFhYWC1YWFhYLTEwMTIsMjAyNi0wOC0wMSxBQ1RJVkUsLDIwMTctMDgtMTgsMixEb3dudG93biBCcmFuY2gNCjEzLDExMixERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDEzLDIwMjYtMDEtMDEsQUNUSVZFLCwyMDE4LTAxLTEwLDIsRG93bnRvd24gQnJhbmNoDQoxNCwxMTQsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAxNCwyMDI2LTAzLTAxLEFDVElWRSwsMjAyMS0wMy0xNSw2LFNvdXRoIEJyYW5jaA0KMTUsMTE1LENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDE1LDIwMjctMDQtMDEsQUNUSVZFLDcwMDAsMjAyMS0wNC0wMSw2LFNvdXRoIEJyYW5jaA0KMTYsMTE2LERFQklULFhYWFgtWFhYWC1YWFhYLTEwMTYsMjAyNS0wOC0wMSxBQ1RJVkUsLDIwMjAtMDgtMjAsNixTb3V0aCBCcmFuY2gNCjE3LDExNyxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDE3LDIwMjQtMTEtMDEsRVhQSVJFRCwsMjAxOS0xMS0xMCw3LENlbnRyYWwgQnJhbmNoDQoxOCwxMTcsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAxOCwyMDI3LTExLTAxLEFDVElWRSwsMjAyMy0xMS0xMCw3LENlbnRyYWwgQnJhbmNoDQoxOSwxMTgsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMTksMjAyNy0wMS0wMSxBQ1RJVkUsMjUwMDAsMjAyMC0wMS0xNSw3LENlbnRyYWwgQnJhbmNoDQoyMCwxMjAsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMjAsMjAyNy0wNi0wMSxBQ1RJVkUsNDAwMDAsMjAxOC0wNi0yNSw4LE5vcnRoV2VzdCBCcmFuY2gNCjIxLDEyMCxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDIxLDIwMjYtMDYtMDEsQUNUSVZFLCwyMDE4LTA2LTI1LDgsTm9ydGhXZXN0IEJyYW5jaA0KMjIsMTI0LENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDIyLDIwMjctMDUtMDEsQUNUSVZFLDEyMDAwLDIwMjAtMDUtMDEsOSxIYXJib3IgQnJhbmNoDQoyMywxMjksQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMjMsMjAyNy0wMy0wMSxBQ1RJVkUsNzUwMDAsMjAxOC0wNC0xMCwxMSxCYXkgQnJhbmNoDQoyNCwxMjksREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAyNCwyMDI2LTAzLTAxLEFDVElWRSwsMjAxOC0wMy0yOCwxMSxCYXkgQnJhbmNoDQoyNSwxMzAsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAyNSwyMDI2LTA0LTAxLEFDVElWRSwsMjAxOC0wNC0xMCwxMSxCYXkgQnJhbmNoDQoyNiwxMzMsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMjYsMjAyNy0wMy0wMSxBQ1RJVkUsMTUwMDAsMjAxOS0wMy0wMSwxMixSaXZlcnNpZGUgQnJhbmNoDQoyNywxMzYsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMjcsMjAyNy0wNy0wMSxBQ1RJVkUsMTgwMDAsMjAyMC0wNy0wMSwxMyxNZXRybyBCcmFuY2gNCjI4LDEzOCxDUkVESVQsWFhYWC1YWFhYLVhYWFgtMTAyOCwyMDI3LTEwLTAxLEFDVElWRSwzNTAwMCwyMDE5LTEwLTAxLDE0LE1pZHRvd24gQnJhbmNoDQoyOSwxMzgsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAyOSwyMDI2LTA5LTAxLEFDVElWRSwsMjAxOS0wOS0wOCwxNCxNaWR0b3duIEJyYW5jaA0KMzAsMTQ4LENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDMwLDIwMjctMTAtMDEsQUNUSVZFLDQ1MDAwLDIwMTktMTAtMDksOSxIYXJib3IgQnJhbmNoDQozMSwxNTIsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMzEsMjAyNy0wOC0wMSxBQ1RJVkUsMjIwMDAsMjAxOC0wOC0xNiwxMixSaXZlcnNpZGUgQnJhbmNoDQozMiwxNjAsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMzIsMjAyNy0wNi0wMSxBQ1RJVkUsMzAwMDAsMjAxOC0wNi0xMCw0LE5vcnRoIEJyYW5jaA0KMzMsMTY0LENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDMzLDIwMjctMDItMDEsQUNUSVZFLDIwMDAwLDIwMjAtMDItMDksOCxOb3J0aFdlc3QgQnJhbmNoDQozNCwxMDYsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAzNCwyMDI3LTAyLTAxLEFDVElWRSwsMjAyMi0wMi0yOCw1LEVhc3QgQnJhbmNoDQozNSwxMTAsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAzNSwyMDI3LTAxLTAxLEJMT0NLRUQsLDIwMjMtMDEtMjAsNSxFYXN0IEJyYW5jaA0KMzYsMTY5LERFQklULFhYWFgtWFhYWC1YWFhYLTEwMzYsMjAyNi0wNS0wMSxBQ1RJVkUsLDIwMjEtMDUtMTUsMzAsU3RyaXAgQnJhbmNoDQozNywxNzAsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwMzcsMjAyNy0wNi0wMSxBQ1RJVkUsODAwMCwyMDIxLTA2LTAxLDMwLFN0cmlwIEJyYW5jaA0KMzgsMTcxLERFQklULFhYWFgtWFhYWC1YWFhYLTEwMzgsMjAyNS0wOS0wMSxBQ1RJVkUsLDIwMjAtMDktMTIsMzEsQnJvYWR3YXkgQnJhbmNoDQozOSwxNzIsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTAzOSwyMDI0LTA0LTAxLEVYUElSRUQsLDIwMTktMDQtMDgsMzIsU2l4dGggU3RyZWV0IEJyYW5jaA0KNDAsMTcyLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNDAsMjAyNy0wNC0wMSxBQ1RJVkUsLDIwMjMtMDQtMDgsMzIsU2l4dGggU3RyZWV0IEJyYW5jaA0KNDEsMTczLENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDQxLDIwMjctMDUtMDEsQUNUSVZFLDQwMDAwLDIwMTktMDUtMDEsMzIsU2l4dGggU3RyZWV0IEJyYW5jaA0KNDIsMTc0LERFQklULFhYWFgtWFhYWC1YWFhYLTEwNDIsMjAyNy0wMi0wMSxBQ1RJVkUsLDIwMjItMDItMTQsMzMsR2FzbGFtcCBCcmFuY2gNCjQzLDE3NSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDQzLDIwMjYtMDgtMDEsQUNUSVZFLCwyMDIxLTA4LTIwLDM0LE1pZHRvd24gQnJhbmNoDQo0NCwxNzYsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwNDQsMjAyNy0wOS0wMSxBQ1RJVkUsMTAwMDAsMjAyMS0wOS0wMSwzNCxNaWR0b3duIEJyYW5jaA0KNDUsMTc3LENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDQ1LDIwMjctMTEtMDEsQUNUSVZFLDIyMDAwLDIwMjAtMTEtMzAsMzUsVXB0b3duIEJyYW5jaA0KNDYsMTc3LERFQklULFhYWFgtWFhYWC1YWFhYLTEwNDYsMjAyNS0xMS0wMSxBQ1RJVkUsLDIwMjAtMTEtMzAsMzUsVXB0b3duIEJyYW5jaA0KNDcsMTc4LERFQklULFhYWFgtWFhYWC1YWFhYLTEwNDcsMjAyMy0wNy0wMSxFWFBJUkVELCwyMDE4LTA3LTI1LDM2LEdhdGV3YXkgQnJhbmNoDQo0OCwxNzgsREVCSVQsWFhYWC1YWFhYLVhYWFgtMTA0OCwyMDI3LTA3LTAxLEFDVElWRSwsMjAyMy0wNy0yNSwzNixHYXRld2F5IEJyYW5jaA0KNDksMTc5LERFQklULFhYWFgtWFhYWC1YWFhYLTEwNDksMjAyNy0wNC0wMSxBQ1RJVkUsLDIwMjItMDQtMDUsMzcsSW5uZXIgSGFyYm9yIEJyYW5jaA0KNTAsMTgwLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNTAsMjAyNC0xMC0wMSxFWFBJUkVELCwyMDE5LTEwLTE4LDM4LFJlc2VhcmNoIEJyYW5jaA0KNTEsMTgwLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNTEsMjAyNy0xMC0wMSxBQ1RJVkUsLDIwMjMtMTAtMTgsMzgsUmVzZWFyY2ggQnJhbmNoDQo1MiwxODEsQ1JFRElULFhYWFgtWFhYWC1YWFhYLTEwNTIsMjAyNy0xMS0wMSxBQ1RJVkUsMjAwMDAsMjAxOS0xMS0wMSwzOCxSZXNlYXJjaCBCcmFuY2gNCjUzLDE4MSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDUzLDIwMjYtMTAtMDEsQUNUSVZFLCwyMDE5LTEwLTE4LDM4LFJlc2VhcmNoIEJyYW5jaA0KNTQsMTgyLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNTQsMjAyNi0xMi0wMSxBQ1RJVkUsLDIwMjEtMTItMDgsMzksVXB0b3duIEJyYW5jaA0KNTUsMTIyLENSRURJVCxYWFhYLVhYWFgtWFhYWC0xMDU1LDIwMjctMTItMDEsQUNUSVZFLDUwMDAsMjAyMi0wMS0wMSw4LE5vcnRoV2VzdCBCcmFuY2gNCjU2LDEyNSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDU2LDIwMjQtMDctMDEsRVhQSVJFRCwsMjAxOS0wNy0yMiw5LEhhcmJvciBCcmFuY2gNCjU3LDEyNSxERUJJVCxYWFhYLVhYWFgtWFhYWC0xMDU3LDIwMjctMDctMDEsQUNUSVZFLCwyMDIzLTA3LTIyLDksSGFyYm9yIEJyYW5jaA0KNTgsMTMxLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNTgsMjAyNS0xMC0wMSxBQ1RJVkUsLDIwMjAtMTAtMTUsMTEsQmF5IEJyYW5jaA0KNTksMTM0LERFQklULFhYWFgtWFhYWC1YWFhYLTEwNTksMjAyNi0wOC0wMSxBQ1RJVkUsLDIwMjEtMDgtMDcsMTIsUml2ZXJzaWRlIEJyYW5jaA0KNjAsMTQwLERFQklULFhYWFgtWFhYWC1YWFhYLTEwNjAsMjAyNi0wMS0wMSxBQ1RJVkUsLDIwMjEtMDEtMTQsMTQsTWlkdG93biBCcmFuY2gNCg==\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"CardID\", Int64.Type}, {\"AccountID\", Int64.Type}, {\"CardType\", type text}, {\"CardNumber\", type text}, {\"ExpiryDate\", type date}, {\"Status\", type text}, {\"CreditLimit\", type number}, {\"IssuedDate\", type date}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fees",
+        "columns": [
+          {
+            "name": "FeeID",
+            "dataType": "int64",
+            "lineageTag": "ec19702e-afd4-44cf-b2db-084251466041",
+            "sourceColumn": "FeeID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AccountID",
+            "dataType": "int64",
+            "lineageTag": "49d97f25-f6a3-46d5-9f12-b70ef486be07",
+            "sourceColumn": "AccountID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FeeType",
+            "dataType": "string",
+            "lineageTag": "cbfb902d-fbda-4a28-8977-2ae1f0bed6c0",
+            "sourceColumn": "FeeType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Amount",
+            "dataType": "double",
+            "lineageTag": "1ecd55c4-1c02-4f42-bd93-6b2396b9738f",
+            "sourceColumn": "Amount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FeeDate",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9c1ef8de-e74d-4072-b43b-31f9f5ad47b5",
+            "sourceColumn": "FeeDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "lineageTag": "aa37232c-870b-4cc6-a1d3-b79f4aa3bbe4",
+            "sourceColumn": "Description",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "lineageTag": "2fec12c7-8d1b-42ed-b1fe-3eacf88a6fe9",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchID",
+            "dataType": "int64",
+            "lineageTag": "3852983d-e9bd-4f9b-acbf-97fdbcee971e",
+            "sourceColumn": "BranchID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BranchName",
+            "dataType": "string",
+            "lineageTag": "6022818b-ec5b-4f89-8291-62e7e6bff786",
+            "sourceColumn": "BranchName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "afa011a1-267e-4a04-9653-292d5a24f429",
+        "partitions": [
+          {
+            "name": "Fees",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Binary.FromText(\"RmVlSUQsQWNjb3VudElELEZlZVR5cGUsQW1vdW50LEZlZURhdGUsRGVzY3JpcHRpb24sU3RhdHVzLEJyYW5jaElELEJyYW5jaE5hbWUNCjEsMTA2LE1BSU5URU5BTkNFLDEyLDIwMjQtMDEtMzEsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQoyLDExMCxNQUlOVEVOQU5DRSwxMiwyMDI0LTAxLTMxLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBBSUQsNSxFYXN0IEJyYW5jaA0KMywxMTMsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wMS0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxXQUlWRUQsMixEb3dudG93biBCcmFuY2gNCjQsMTA2LE9WRVJEUkFGVCwzNSwyMDI0LTAxLTI1LE92ZXJkcmFmdCBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQo1LDExMCxBVE0sMywyMDI0LTAyLTEyLE91dC1vZi1uZXR3b3JrIEFUTSBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQo2LDEwMSxUUkFOU0ZFUiw1LDIwMjQtMDEtMDgsV2lyZSB0cmFuc2ZlciBmZWUsUEFJRCwxLE1haW4gQnJhbmNoDQo3LDExMSxNQUlOVEVOQU5DRSwwLDIwMjQtMDItMjksTW9udGhseSBmZWUgLSB3YWl2ZWQsV0FJVkVELDIsRG93bnRvd24gQnJhbmNoDQo4LDEwNCxNQUlOVEVOQU5DRSwxMiwyMDI0LTAyLTI5LE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBBSUQsMyxXZXN0IEJyYW5jaA0KOSwxMzcsT1ZFUkRSQUZULDM1LDIwMjQtMDQtMzAsT3ZlcmRyYWZ0IGZlZSxQQUlELDEzLE1ldHJvIEJyYW5jaA0KMTAsMTI2LEFUTSwzLDIwMjQtMDQtMDgsT3V0LW9mLW5ldHdvcmsgQVRNIGZlZSxQQUlELDEwLExha2VzaWRlIEJyYW5jaA0KMTEsMTE5LE1BSU5URU5BTkNFLDEyLDIwMjQtMDMtMzEsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw3LENlbnRyYWwgQnJhbmNoDQoxMiwxMDYsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wMi0yOSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQQUlELDUsRWFzdCBCcmFuY2gNCjEzLDE2MSxNQUlOVEVOQU5DRSwxMiwyMDI0LTA2LTMwLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBFTkRJTkcsNSxFYXN0IEJyYW5jaA0KMTQsMTEwLE1BSU5URU5BTkNFLDEyLDIwMjQtMDItMjksTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQoxNSwxMDMsVFJBTlNGRVIsNSwyMDI0LTAyLTI1LFdpcmUgdHJhbnNmZXIgZmVlLFBBSUQsMixEb3dudG93biBCcmFuY2gNCjE2LDE0OSxPVkVSRFJBRlQsMzUsMjAyNC0wNi0xMixPdmVyZHJhZnQgZmVlLFBBSUQsMTAsTGFrZXNpZGUgQnJhbmNoDQoxNywxNjUsT1ZFUkRSQUZULDM1LDIwMjQtMDctMDMsT3ZlcmRyYWZ0IGZlZSxQRU5ESU5HLDksSGFyYm9yIEJyYW5jaA0KMTgsMTA2LE1BSU5URU5BTkNFLDEyLDIwMjQtMDMtMzEsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQoxOSwxMzcsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wNS0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQQUlELDEzLE1ldHJvIEJyYW5jaA0KMjAsMTEwLExBVEVfUEFZTUVOVCwyNSwyMDI0LTAzLTE1LExhdGUgbG9hbiBwYXltZW50IGZlZSxQQUlELDUsRWFzdCBCcmFuY2gNCjIxLDExMSxNQUlOVEVOQU5DRSwwLDIwMjQtMDMtMzEsTW9udGhseSBmZWUgLSB3YWl2ZWQgKHByZW1pdW0pLFdBSVZFRCwyLERvd250b3duIEJyYW5jaA0KMjIsMTI5LE1BSU5URU5BTkNFLDAsMjAyNC0wMS0zMSxNb250aGx5IGZlZSAtIHdhaXZlZCAocHJlbWl1bSksV0FJVkVELDExLEJheSBCcmFuY2gNCjIzLDEwNixNQUlOVEVOQU5DRSwxMiwyMDI0LTA0LTMwLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBBSUQsNSxFYXN0IEJyYW5jaA0KMjQsMTEwLE1BSU5URU5BTkNFLDEyLDIwMjQtMDMtMzEsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw1LEVhc3QgQnJhbmNoDQoyNSwxMTksT1ZFUkRSQUZULDM1LDIwMjQtMDMtMTgsT3ZlcmRyYWZ0IGZlZSxQQUlELDcsQ2VudHJhbCBCcmFuY2gNCjI2LDEyNixNQUlOVEVOQU5DRSwxMiwyMDI0LTA1LTMxLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBBSUQsMTAsTGFrZXNpZGUgQnJhbmNoDQoyNywxMzcsQVRNLDMsMjAyNC0wNS0wOCxPdXQtb2YtbmV0d29yayBBVE0gZmVlLFBBSUQsMTMsTWV0cm8gQnJhbmNoDQoyOCwxNDMsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wNS0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQQUlELDE1LEdhcmRlbiBCcmFuY2gNCjI5LDE0OSxNQUlOVEVOQU5DRSwxMiwyMDI0LTA1LTMxLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBBSUQsMTAsTGFrZXNpZGUgQnJhbmNoDQozMCwxNTcsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wNy0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQRU5ESU5HLDIsRG93bnRvd24gQnJhbmNoDQozMSwxNjEsT1ZFUkRSQUZULDM1LDIwMjQtMDYtMTAsT3ZlcmRyYWZ0IGZlZSxQQUlELDUsRWFzdCBCcmFuY2gNCjMyLDE2NSxNQUlOVEVOQU5DRSwxMiwyMDI0LTA3LTMxLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBFTkRJTkcsOSxIYXJib3IgQnJhbmNoDQozMywxNjksVFJBTlNGRVIsNSwyMDI0LTA3LTEwLFdpcmUgdHJhbnNmZXIgZmVlLFBBSUQsMzAsU3RyaXAgQnJhbmNoDQozNCwxNzAsQVRNLDMsMjAyNC0wNy0xNSxPdXQtb2YtbmV0d29yayBBVE0gZmVlLFBBSUQsMzAsU3RyaXAgQnJhbmNoDQozNSwxNzIsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wNy0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQQUlELDMyLFNpeHRoIFN0cmVldCBCcmFuY2gNCjM2LDE3NSxNQUlOVEVOQU5DRSwxMiwyMDI0LTA4LTMxLE1vbnRobHkgbWFpbnRlbmFuY2UgZmVlLFBFTkRJTkcsMzQsTWlkdG93biBCcmFuY2gNCjM3LDEwMSxNQUlOVEVOQU5DRSwwLDIwMjQtMDMtMzEsTW9udGhseSBmZWUgLSB3YWl2ZWQgKHByZW1pdW0pLFdBSVZFRCwxLE1haW4gQnJhbmNoDQozOCwxMDUsTUFJTlRFTkFOQ0UsMCwyMDI0LTAyLTI5LE1vbnRobHkgZmVlIC0gd2FpdmVkIChwcmVtaXVtKSxXQUlWRUQsNCxOb3J0aCBCcmFuY2gNCjM5LDEzOCxNQUlOVEVOQU5DRSwwLDIwMjQtMDMtMzEsTW9udGhseSBmZWUgLSB3YWl2ZWQgKHByZW1pdW0pLFdBSVZFRCwxNCxNaWR0b3duIEJyYW5jaA0KNDAsMTA0LE1BSU5URU5BTkNFLDEyLDIwMjQtMDMtMzEsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCwzLFdlc3QgQnJhbmNoDQo0MSwxMDYsTEFURV9QQVlNRU5ULDI1LDIwMjQtMDQtMTAsTGF0ZSBsb2FuIHBheW1lbnQgZmVlLFBBSUQsNSxFYXN0IEJyYW5jaA0KNDIsMTE5LE1BSU5URU5BTkNFLDEyLDIwMjQtMDQtMzAsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCw3LENlbnRyYWwgQnJhbmNoDQo0MywxMjIsQVRNLDMsMjAyNC0wMy0yOCxPdXQtb2YtbmV0d29yayBBVE0gZmVlLFBBSUQsOCxOb3J0aFdlc3QgQnJhbmNoDQo0NCwxMjYsT1ZFUkRSQUZULDM1LDIwMjQtMDQtMDgsT3ZlcmRyYWZ0IGZlZSxQQUlELDEwLExha2VzaWRlIEJyYW5jaA0KNDUsMTM3LExBVEVfUEFZTUVOVCwyNSwyMDI0LTA2LTAxLExhdGUgcGF5bWVudCBmZWUsUEFJRCwxMyxNZXRybyBCcmFuY2gNCjQ2LDE0MyxBVE0sMywyMDI0LTA1LTI1LE91dC1vZi1uZXR3b3JrIEFUTSBmZWUsUEFJRCwxNSxHYXJkZW4gQnJhbmNoDQo0NywxNDksT1ZFUkRSQUZULDM1LDIwMjQtMDctMTIsT3ZlcmRyYWZ0IGZlZSxQRU5ESU5HLDEwLExha2VzaWRlIEJyYW5jaA0KNDgsMTUzLE1BSU5URU5BTkNFLDEyLDIwMjQtMDYtMzAsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCwxMyxNZXRybyBCcmFuY2gNCjQ5LDE1NSxBVE0sMywyMDI0LTA2LTI4LE91dC1vZi1uZXR3b3JrIEFUTSBmZWUsUEFJRCwxNSxHYXJkZW4gQnJhbmNoDQo1MCwxNTcsT1ZFUkRSQUZULDM1LDIwMjQtMDctMDMsT3ZlcmRyYWZ0IGZlZSxQRU5ESU5HLDIsRG93bnRvd24gQnJhbmNoDQo1MSwxNjEsTUFJTlRFTkFOQ0UsMTIsMjAyNC0wNy0zMSxNb250aGx5IG1haW50ZW5hbmNlIGZlZSxQRU5ESU5HLDUsRWFzdCBCcmFuY2gNCjUyLDE2MyxBVE0sMywyMDI0LTEwLTI4LE91dC1vZi1uZXR3b3JrIEFUTSBmZWUsUEVORElORyw3LENlbnRyYWwgQnJhbmNoDQo1MywxNjUsTEFURV9QQVlNRU5ULDI1LDIwMjQtMDctMTksTGF0ZSBwYXltZW50IGZlZSxQQUlELDksSGFyYm9yIEJyYW5jaA0KNTQsMTY3LE1BSU5URU5BTkNFLDEyLDIwMjQtMDQtMzAsTW9udGhseSBtYWludGVuYW5jZSBmZWUsUEFJRCwxMCxMYWtlc2lkZSBCcmFuY2gNCjU1LDE3MixBVE0sMywyMDI0LTA3LTIwLE91dC1vZi1uZXR3b3JrIEFUTSBmZWUsUEFJRCwzMixTaXh0aCBTdHJlZXQgQnJhbmNoDQo1NiwxNzUsT1ZFUkRSQUZULDM1LDIwMjQtMDgtMjAsT3ZlcmRyYWZ0IGZlZSxQRU5ESU5HLDM0LE1pZHRvd24gQnJhbmNoDQo1NywxNzcsTUFJTlRFTkFOQ0UsMCwyMDI0LTA4LTMxLE1vbnRobHkgZmVlIC0gd2FpdmVkIChwcmVtaXVtKSxXQUlWRUQsMzUsVXB0b3duIEJyYW5jaA0KNTgsMTgxLFRSQU5TRkVSLDUsMjAyNC0wOC0wOCxXaXJlIHRyYW5zZmVyIGZlZSxQQUlELDM4LFJlc2VhcmNoIEJyYW5jaA0KNTksMTY5LE1BSU5URU5BTkNFLDAsMjAyNC0wNy0zMSxNb250aGx5IGZlZSAtIHdhaXZlZCxXQUlWRUQsMzAsU3RyaXAgQnJhbmNoDQo2MCwxNzMsTUFJTlRFTkFOQ0UsMCwyMDI0LTA4LTMxLE1vbnRobHkgZmVlIC0gd2FpdmVkIChwcmVtaXVtKSxXQUlWRUQsMzIsU2l4dGggU3RyZWV0IEJyYW5jaA0K\", BinaryEncoding.Base64), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),",
+                "    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    Typed = Table.TransformColumnTypes(Headers, {{\"FeeID\", Int64.Type}, {\"AccountID\", Int64.Type}, {\"FeeType\", type text}, {\"Amount\", type number}, {\"FeeDate\", type date}, {\"Description\", type text}, {\"Status\", type text}, {\"BranchID\", Int64.Type}, {\"BranchName\", type text}})",
+                "in",
+                "    Typed"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "isNameInferred": false,
+            "lineageTag": "55dc38a0-15c2-43b9-b666-f0e0752d5301",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "8ba00269-3e7c-44c5-a737-7afa2bd817ec",
+            "sourceColumn": "[Year]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "MonthNo",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "b5a4d887-66c8-4288-85c4-12539c29a51a",
+            "sourceColumn": "[MonthNo]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "54cdad3b-70a4-41d7-bbdd-68a64cfe7e0c",
+            "sortByColumn": "MonthNo",
+            "sourceColumn": "[Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "YearMonth",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "e31a4eff-939a-43cf-b869-413a3459ba8c",
+            "sourceColumn": "[YearMonth]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "MonthYear",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "744ca0a1-93e1-4db2-9f5b-c558a81afdf1",
+            "sourceColumn": "[MonthYear]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "36e21f81-2cf5-4cb7-be46-f216cd75f23f",
+            "sourceColumn": "[Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "cd40ca19-97bf-40bf-a359-de60e39cff47",
+        "partitions": [
+          {
+            "name": "Date",
+            "mode": "import",
+            "source": {
+              "expression": "ADDCOLUMNS ( CALENDAR ( DATE(2015,1,1), DATE(2026,12,31) ), \"Year\", YEAR([Date]), \"MonthNo\", MONTH([Date]), \"Month\", FORMAT([Date],\"MMM\"), \"YearMonth\", FORMAT([Date],\"YYYY-MM\"), \"MonthYear\", FORMAT([Date],\"MMM YYYY\"), \"Quarter\", \"Q\" & FORMAT([Date],\"Q\") )",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "_Measures",
+        "columns": [
+          {
+            "name": "_",
+            "dataType": "int64",
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "edddab25-e02a-4744-9e82-f7b565b6c634",
+            "sourceColumn": "[_]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "a33a7bcc-f44d-47ce-a4e1-11959a98b495",
+        "measures": [
+          {
+            "name": "Total Customers",
+            "displayFolder": "01 Core KPIs",
+            "expression": "DISTINCTCOUNT ( Customers[CustomerID] )",
+            "formatString": "#,0",
+            "lineageTag": "91a08682-d54d-4871-b49d-9ff659f4baa2"
+          },
+          {
+            "name": "Total Accounts",
+            "displayFolder": "01 Core KPIs",
+            "expression": "COUNTROWS ( Accounts )",
+            "formatString": "#,0",
+            "lineageTag": "720ba4c8-b09e-4cbc-a047-4671344ec8d4"
+          },
+          {
+            "name": "Total Balance",
+            "displayFolder": "01 Core KPIs",
+            "expression": "SUM ( Accounts[Balance] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "eadb9230-215f-4cb4-becc-3bdfcc50b5ce"
+          },
+          {
+            "name": "Total Transactions",
+            "displayFolder": "01 Core KPIs",
+            "expression": "COUNTROWS ( Transactions )",
+            "formatString": "#,0",
+            "lineageTag": "0f169f89-ad1a-463d-87fa-5662fa385ee8"
+          },
+          {
+            "name": "Total Loans",
+            "displayFolder": "01 Core KPIs",
+            "expression": "COUNTROWS ( Loans )",
+            "formatString": "#,0",
+            "lineageTag": "d3ed6e7b-97ac-4964-8bbe-1b475b9beed2"
+          },
+          {
+            "name": "Total Branches",
+            "displayFolder": "01 Core KPIs",
+            "expression": "DISTINCTCOUNT ( Branches[BranchID] )",
+            "formatString": "#,0",
+            "lineageTag": "f2d92b63-f0b0-41cf-9edf-262286b53660"
+          },
+          {
+            "name": "Active Accounts",
+            "displayFolder": "02 Accounts",
+            "expression": "CALCULATE ( COUNTROWS ( Accounts ), Accounts[Status] = \"ACTIVE\" )",
+            "formatString": "#,0",
+            "lineageTag": "9e48d1f0-dfce-456d-b5cb-debde9046c4f"
+          },
+          {
+            "name": "Closed Accounts",
+            "displayFolder": "02 Accounts",
+            "expression": "CALCULATE ( COUNTROWS ( Accounts ), Accounts[Status] = \"CLOSED\" )",
+            "formatString": "#,0",
+            "lineageTag": "6e721d1e-5102-48e8-becb-12f73552a028"
+          },
+          {
+            "name": "Average Balance",
+            "displayFolder": "02 Accounts",
+            "expression": "AVERAGE ( Accounts[Balance] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "9cb1e291-2fa7-47c4-92bc-c0ada9c2a4a8"
+          },
+          {
+            "name": "Active Account %",
+            "displayFolder": "02 Accounts",
+            "expression": "DIVIDE ( [Active Accounts], [Total Accounts] )",
+            "formatString": "0.0%",
+            "lineageTag": "7893404c-92b7-40d1-b4ef-2a467d2c633f"
+          },
+          {
+            "name": "Transaction Count",
+            "displayFolder": "03 Transactions",
+            "expression": "COUNTROWS ( Transactions )",
+            "formatString": "#,0",
+            "lineageTag": "e7692c47-1ea8-4c80-b8e6-eabaaa156ef7"
+          },
+          {
+            "name": "Deposit Amount",
+            "displayFolder": "03 Transactions",
+            "expression": "CALCULATE ( SUM ( Transactions[Amount] ), Transactions[TransType] = \"DEPOSIT\" )",
+            "formatString": "\\$#,0",
+            "lineageTag": "19bc4b6b-246c-499a-98fa-dfe058209503"
+          },
+          {
+            "name": "Withdrawal Amount",
+            "displayFolder": "03 Transactions",
+            "expression": "CALCULATE ( SUM ( Transactions[Amount] ), Transactions[TransType] = \"WITHDRAWAL\" )",
+            "formatString": "\\$#,0",
+            "lineageTag": "c47cfa2c-3f31-4704-b834-cfbd6c5ec8f3"
+          },
+          {
+            "name": "Transfer Amount",
+            "displayFolder": "03 Transactions",
+            "expression": "CALCULATE ( SUM ( Transactions[Amount] ), Transactions[TransType] = \"TRANSFER\" )",
+            "formatString": "\\$#,0",
+            "lineageTag": "a07adbf1-9fe7-45e3-9f2c-3bcf8d9a853a"
+          },
+          {
+            "name": "Total Transaction Amount",
+            "displayFolder": "03 Transactions",
+            "expression": "SUM ( Transactions[Amount] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "9530a889-c706-4dd2-81a8-04a1f1b577d5"
+          },
+          {
+            "name": "Average Transaction Amount",
+            "displayFolder": "03 Transactions",
+            "expression": "AVERAGE ( Transactions[Amount] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "1fbf6ebe-deee-40e4-99c0-eb647fc16017"
+          },
+          {
+            "name": "Net Cash Flow",
+            "displayFolder": "03 Transactions",
+            "expression": "[Deposit Amount] - [Withdrawal Amount]",
+            "formatString": "\\$#,0",
+            "lineageTag": "b4523269-a9c6-41ba-a5e9-269b9f98e58b"
+          },
+          {
+            "name": "Total Loan Amount",
+            "displayFolder": "04 Loans",
+            "expression": "SUM ( Loans[Amount] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "43cd5fd1-f201-4be2-828f-26bb12952966"
+          },
+          {
+            "name": "Active Loans",
+            "displayFolder": "04 Loans",
+            "expression": "CALCULATE ( COUNTROWS ( Loans ), Loans[Status] = \"ACTIVE\" )",
+            "formatString": "#,0",
+            "lineageTag": "5375dd83-b3a2-4b1a-a147-d6e4f6ff4cd2"
+          },
+          {
+            "name": "Paid Loans",
+            "displayFolder": "04 Loans",
+            "expression": "CALCULATE ( COUNTROWS ( Loans ), Loans[Status] = \"PAID\" )",
+            "formatString": "#,0",
+            "lineageTag": "1447f18b-27f2-4d20-8888-d70bb822acd7"
+          },
+          {
+            "name": "Outstanding Loan Amount",
+            "displayFolder": "04 Loans",
+            "expression": "CALCULATE ( SUM ( Loans[Amount] ), Loans[Status] = \"ACTIVE\" )",
+            "formatString": "\\$#,0",
+            "lineageTag": "5656e37f-35da-4db6-b806-33f9aa255c3e"
+          },
+          {
+            "name": "Average Interest Rate",
+            "displayFolder": "04 Loans",
+            "expression": "AVERAGE ( Loans[InterestRate] )",
+            "formatString": "0.00\\%",
+            "lineageTag": "831c97bd-1818-4315-9524-777577627d73"
+          },
+          {
+            "name": "Average Loan Size",
+            "displayFolder": "04 Loans",
+            "expression": "AVERAGE ( Loans[Amount] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "66d1f6f3-08db-4136-aa3a-77e976b48aff"
+          },
+          {
+            "name": "New Customers",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "CALCULATE ( COUNTROWS ( Customers ), USERELATIONSHIP ( 'Date'[Date], Customers[JoinDate] ) )",
+            "formatString": "#,0",
+            "lineageTag": "fc591c70-1c31-4f11-b1a3-e4663d66b538"
+          },
+          {
+            "name": "Running Total Balance",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "CALCULATE ( [Total Balance], FILTER ( ALL ( 'Date'[Date] ), 'Date'[Date] <= MAX ( 'Date'[Date] ) ), USERELATIONSHIP ( 'Date'[Date], Accounts[OpenDate] ) )",
+            "formatString": "\\$#,0",
+            "lineageTag": "f6f48124-835d-4261-a31f-064a751aeca2"
+          },
+          {
+            "name": "YTD Transactions",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "TOTALYTD ( [Transaction Count], 'Date'[Date] )",
+            "formatString": "#,0",
+            "lineageTag": "f2dd177e-a669-43b0-a862-b0295fd1c042"
+          },
+          {
+            "name": "YTD Transaction Amount",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "TOTALYTD ( [Total Transaction Amount], 'Date'[Date] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "4e512188-34c3-4afb-be7d-fa046ff25338"
+          },
+          {
+            "name": "Prev Month Transactions",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "CALCULATE ( [Transaction Count], PREVIOUSMONTH ( 'Date'[Date] ) )",
+            "formatString": "#,0",
+            "lineageTag": "de531942-42ee-442c-b6f2-2a1b743a9395"
+          },
+          {
+            "name": "Monthly Growth %",
+            "displayFolder": "05 Time Intelligence",
+            "expression": "VAR Prev = [Prev Month Transactions] RETURN DIVIDE ( [Transaction Count] - Prev, Prev )",
+            "formatString": "0.0%",
+            "lineageTag": "f422ce54-d0dd-41da-9c97-5786df8b40b7"
+          },
+          {
+            "name": "Rank Branch",
+            "displayFolder": "06 Ranking & Branch",
+            "expression": "RANKX ( ALL ( Branches[BranchName] ), [Total Balance], , DESC, DENSE )",
+            "formatString": "#,0",
+            "lineageTag": "b2877d42-787f-48f4-956b-04cc721f239c"
+          },
+          {
+            "name": "Total Deposits",
+            "displayFolder": "06 Ranking & Branch",
+            "expression": "[Deposit Amount]",
+            "formatString": "\\$#,0",
+            "lineageTag": "aecc43ad-a112-4c48-a765-662be8df557a"
+          },
+          {
+            "name": "Total Employees",
+            "displayFolder": "06 Ranking & Branch",
+            "expression": "COUNTROWS ( Employees )",
+            "formatString": "#,0",
+            "lineageTag": "9544029a-90ba-4b2a-81ee-42c68017bdf3"
+          },
+          {
+            "name": "Total Cards",
+            "displayFolder": "07 Bonus - Cards & Fees",
+            "expression": "COUNTROWS ( Cards )",
+            "formatString": "#,0",
+            "lineageTag": "b12cf226-0248-430a-8a66-d6d8cd12803d"
+          },
+          {
+            "name": "Active Cards",
+            "displayFolder": "07 Bonus - Cards & Fees",
+            "expression": "CALCULATE ( COUNTROWS ( Cards ), Cards[Status] = \"ACTIVE\" )",
+            "formatString": "#,0",
+            "lineageTag": "4dec7205-a317-4ba0-9603-cd804618ddc4"
+          },
+          {
+            "name": "Total Credit Limit",
+            "displayFolder": "07 Bonus - Cards & Fees",
+            "expression": "SUM ( Cards[CreditLimit] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "32d00c94-1352-4f31-ba40-1ba26ef78e5c"
+          },
+          {
+            "name": "Total Fees",
+            "displayFolder": "07 Bonus - Cards & Fees",
+            "expression": "SUM ( Fees[Amount] )",
+            "formatString": "\\$#,0",
+            "lineageTag": "46adc617-36ff-4c1f-b54d-e87dc25f1ee8"
+          },
+          {
+            "name": "Total Fees Collected",
+            "displayFolder": "07 Bonus - Cards & Fees",
+            "expression": "CALCULATE ( SUM ( Fees[Amount] ), Fees[Status] = \"PAID\" )",
+            "formatString": "\\$#,0",
+            "lineageTag": "31890466-0002-446b-981f-6de6630a6b4b"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures",
+            "mode": "import",
+            "source": {
+              "expression": "ROW(\"_\", BLANK())",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
