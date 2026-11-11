@@ -4,6 +4,9 @@ An end-to-end Business Intelligence solution over a retail-banking
 database: database analysis, SQL, an Excel data-prep workbook, an
 interactive Power BI dashboard, DAX measures, and a business report.
 
+The full assignment brief (business scenario, requirements and
+grading weights for each part) is in [PROJECT_BRIEF.md](PROJECT_BRIEF.md).
+
 ## Folders
 - Part1-Database-Analysis  : ER diagram and table analysis
 - Part2-SQL                : schema/data and business queries
